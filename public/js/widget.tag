@@ -27,7 +27,7 @@ var AjaxMixin = {
       .then(this.json)
       .then(this.assign_target_promise(assign_target))
       .catch(this.handle_error)
-  }
+  },
 }
 
 var FindLinkMixin = {
@@ -68,9 +68,14 @@ var TranslationMixin = {
   <project record_url={ record_url } client_url={ client_url }></project>
 
   <script>
+    this.api_hosts = {
+      production:  'https://api.betterplace.org',
+      staging:     'https://api.bp42.com',
+      development: 'http://www.betterplace.dev',
+    }
     this.mixin(TranslationMixin)
     var params       = riot.route.query()
-    var api_host     = (params.api_host || 'https://www.betterplace.org')
+    var api_host     = this.api_hosts[(params.env || 'production')]
     var api_base_url = api_host + '/' + this.lang + '/api_v4'
     this.record_url  = api_base_url + document.location.pathname
 
