@@ -6,47 +6,73 @@
 h1
   margin: 0
   font-family: "Open Sans"
-  font-size: 18px
+  font-size: 14px
+  font-weight: 500
   text-align: center
+
+.limited-width
+  min-width: 140px
+  max-width: 180px
+  margin: 0 auto
 
 .progress-bar
   background: $very-light-grey
   border-radius: 3px
-  margin: 10px 0
+  margin: 15px 0 10px 0
 
   .bar
     height: 10px
-    background: $medium-green
+    +gradient-vertical($medium-green, darken($medium-green, 4%))
     border-radius: 3px
 
 .project-values
-  color: $medium-grey
-  font-size: 12px
   margin: 10px 0
+  font-size: 0
 
   .value
     font-size: 15px
+    color: $dark-grey
 
   .donor-count,
   .progress-percentage
-    width: 49%
+    width: 50%
     display: inline-block
     vertical-align: top
+    font-size: 10px
+    color: $medium-grey
 
   .progress-percentage
     text-align: right
 
+.project-status-message
+  font-size: 13px
+  color: $dark-grey
+  text-align: center
+  margin: 15px 0
+
 .button
   display: block
-  background: $medium-green
-  border-radius: 4px
+  +gradient-vertical($medium-green, darken($medium-green, 7.5%))
+  border-radius: 6px
   text-align: center
   color: white
   text-decoration: none
-  padding: 5px 0
+  font-size: 14px
+  font-weight: 600
+  line-height: 1.42
+  border-color: transparent
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25)
+  padding: 7px
 
 .logo
   margin-top: 10px
   padding-top: 10px
   text-align: center
   border-top: 1px solid $light-grey
+  color: $dark-grey
+  font-size: 10px
+
+  img
+    max-width: 140px
+    display: block
+    margin: 0 auto 10px auto

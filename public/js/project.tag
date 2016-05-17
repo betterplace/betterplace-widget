@@ -6,13 +6,14 @@
 
     <h1>{ record.title }</h1>
 
-    <div class="progress-bar">
-      <div class="bar" style="width: { record.progress_percentage }%">
-      </div>
-    </div>
+    <div class="limited-width">
 
-    <div if={ !record.donations_prohibited } class="project-values">
-      <div class="inner">
+      <div class="progress-bar">
+        <div class="bar" style="width: { record.progress_percentage }%">
+        </div>
+      </div>
+
+      <div if={ !record.donations_prohibited } class="project-values">
         <div class="donor-count">
           <div class="value">{ record.donor_count }</div>
           { t.donor_count }
@@ -22,19 +23,21 @@
           { t.financed }
         </div>
       </div>
+
+      <div class="project-status-message" if={ record.donations_prohibited }>
+        { t.donations_prohibited }
+      </div>
+
+      <a class="button" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
+      <a class="button" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
+
     </div>
 
-    <div if={ record.donations_prohibited }>
-      { t.donations_prohibited }
-    </div>
-
-    <a class="button" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
-    <a class="button" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
-
-    <div if={ client.widget_logo }>
+    <div class="logo" if={ client.widget_logo }>
       <img src={ client.widget_logo }/>
       <span>{ client.widget_subline }</span>
     </div>
+
     <div class="logo" if={ !client || !client.widget_logo }>
       <img src="/images/bp-org.png"/>
     </div>

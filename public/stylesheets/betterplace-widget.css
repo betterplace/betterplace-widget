@@ -1,7 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
 body {
   margin: 0;
-  font-family: Arial, sans-serif; }
+  font-family: Arial, sans-serif;
+  color: #3f3f3f;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
 
 * {
   box-sizing: border-box; }
@@ -14,7 +17,7 @@ project {
 
 widget {
   min-width: 160px;
-  max-width: 420px;
+  max-width: 320px;
   margin: 0 auto; }
 
 section {
@@ -38,45 +41,78 @@ section {
 h1 {
   margin: 0;
   font-family: "Open Sans";
-  font-size: 18px;
+  font-size: 14px;
+  font-weight: 500;
   text-align: center; }
+
+.limited-width {
+  min-width: 140px;
+  max-width: 180px;
+  margin: 0 auto; }
 
 .progress-bar {
   background: #eeeeee;
   border-radius: 3px;
-  margin: 10px 0; }
+  margin: 15px 0 10px 0; }
   .progress-bar .bar {
     height: 10px;
-    background: #bad304;
+    background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
+    background-image: -o-linear-gradient(top, #bad304 0%, #a8bf04 100%);
+    background-image: linear-gradient(to bottom, #bad304 0%, #a8bf04 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
     border-radius: 3px; }
 
 .project-values {
-  color: #949494;
-  font-size: 12px;
-  margin: 10px 0; }
+  margin: 10px 0;
+  font-size: 0; }
   .project-values .value {
-    font-size: 15px; }
+    font-size: 15px;
+    color: #636b70; }
   .project-values .donor-count,
   .project-values .progress-percentage {
-    width: 49%;
+    width: 50%;
     display: inline-block;
-    vertical-align: top; }
+    vertical-align: top;
+    font-size: 10px;
+    color: #949494; }
   .project-values .progress-percentage {
     text-align: right; }
 
+.project-status-message {
+  font-size: 13px;
+  color: #636b70;
+  text-align: center;
+  margin: 15px 0; }
+
 .button {
   display: block;
-  background: #bad304;
-  border-radius: 4px;
+  background-image: -webkit-linear-gradient(top, #bad304 0%, #99ad03 100%);
+  background-image: -o-linear-gradient(top, #bad304 0%, #99ad03 100%);
+  background-image: linear-gradient(to bottom, #bad304 0%, #99ad03 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FF99AD03', GradientType=0);
+  border-radius: 6px;
   text-align: center;
   color: white;
   text-decoration: none;
-  padding: 5px 0; }
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.42;
+  border-color: transparent;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  padding: 7px; }
 
 .logo {
   margin-top: 10px;
   padding-top: 10px;
   text-align: center;
-  border-top: 1px solid #cccccc; }
+  border-top: 1px solid #cccccc;
+  color: #636b70;
+  font-size: 10px; }
+  .logo img {
+    max-width: 140px;
+    display: block;
+    margin: 0 auto 10px auto; }
 
 /*# sourceMappingURL=betterplace-widget.css.map */
