@@ -10,7 +10,7 @@ class ToPrefixed
   def call(env)
     status, headers, body  = @app.call(env)
 
-    css = File.read('public/stylesheets/app.css')
+    css = File.read('public/stylesheets/betterplace-widget.css')
 
     prefixed_css = AutoprefixerRails.process(css, from: 'app.css').css
 

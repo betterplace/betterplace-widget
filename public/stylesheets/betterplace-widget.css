@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300);
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; }
+
+* {
+  box-sizing: border-box; }
+
+widget,
+project {
+  display: block;
+  height: 320px;
+  position: relative; }
+
+widget {
+  min-width: 160px;
+  max-width: 420px;
+  margin: 0 auto; }
+
+section {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  min-height: 205px;
+  background: white; }
+  @media (min-width: 200px) {
+    section {
+      margin: 0 10px;
+      width: calc(100% - 20px); } }
+
+.image {
+  height: 170px;
+  background-size: cover;
+  background-position: 50% 50%; }
+
+h1 {
+  margin: 0;
+  font-family: "Open Sans";
+  font-size: 18px;
+  text-align: center; }
+
+.progress-bar {
+  background: #eeeeee;
+  border-radius: 3px;
+  margin: 10px 0; }
+  .progress-bar .bar {
+    height: 10px;
+    background: #bad304;
+    border-radius: 3px; }
+
+.project-values {
+  color: #949494;
+  font-size: 12px;
+  margin: 10px 0; }
+  .project-values .value {
+    font-size: 15px; }
+  .project-values .donor-count,
+  .project-values .progress-percentage {
+    width: 49%;
+    display: inline-block;
+    vertical-align: top; }
+  .project-values .progress-percentage {
+    text-align: right; }
+
+.button {
+  display: block;
+  background: #bad304;
+  border-radius: 4px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  padding: 5px 0; }
+
+.logo {
+  margin-top: 10px;
+  padding-top: 10px;
+  text-align: center;
+  border-top: 1px solid #cccccc; }
+
+/*# sourceMappingURL=betterplace-widget.css.map */
