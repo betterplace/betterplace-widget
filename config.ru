@@ -1,7 +1,9 @@
 require 'sass/plugin/rack'
 require 'fileutils'
+require './compile_src'
 
 use Sass::Plugin::Rack
+use CompileSrc
 
 use Rack::Static, urls: %w(/images /js /stylesheets), root: 'public'
 
