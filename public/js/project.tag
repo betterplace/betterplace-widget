@@ -8,7 +8,7 @@
 
     <div class="limited-width">
 
-      <div class="progress-bar">
+      <div class="progress-bar" if={ record.progress_percentage }>
         <div class="bar" style="width: { record.progress_percentage }%">
         </div>
       </div>
@@ -28,8 +28,8 @@
         { t.donations_prohibited }
       </div>
 
-      <a class="button" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
-      <a class="button" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
+      <a target="_blank" class="button button-block" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
+      <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
 
     </div>
 

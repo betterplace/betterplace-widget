@@ -17,7 +17,6 @@ project
 widget
   min-width: 160px
   max-width: 320px
-  margin: 0 auto
 
 section
   position: absolute
@@ -25,9 +24,8 @@ section
   left: 0
   width: 100%
   padding: 10px
-  min-height: 205px
   background: white
 
-  @media (min-width: 200px)
+  +wide
     margin: 0 10px
     width: calc(100% - 20px)
