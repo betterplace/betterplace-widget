@@ -62,13 +62,17 @@
         var utm = {
           utm_source: document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget',
           utm_medium: document.location.pathname.substring(1).replace(/s?\//, '_'),
-          utm_content: encodeURI(this.record.title),
+          utm_content: encodeURI(this.record.title).substring(0,60),
           utm_campaign: 'widget',
         }
         var utm_query = '?' + Object.keys(utm).map(k => k + '=' + utm[k]).join('&');
 
         this.profile_picture = this.find_link(this.record.profile_picture.links, 'fill_410x214')
         this.visit_url       = this.find_link(this.record.links, 'platform') + utm_query
+
+        if(this.client && this.client.project_url_template) {
+          this.visit_url = this.client.project_url_template.replace('{project_id}', this.record.id)
+        }
       }
     })
   </script>

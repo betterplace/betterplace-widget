@@ -1,37 +1,13 @@
 require 'sass/plugin/rack'
-require "autoprefixer-rails"
 require 'fileutils'
-
-class ToPrefixed
-  def initialize(app)
-    @app = app
-  end
-
-  def call(env)
-    status, headers, body  = @app.call(env)
-
-    css = File.read('public/stylesheets/betterplace-widget.css')
-
-    prefixed_css = AutoprefixerRails.process(css, from: 'app.css').css
-
-    File.open('public/stylesheets/app.css', "wb") do |file|
-      file.write(prefixed_css)
-    end
-
-    [status, headers, body]
-  end
-end
+require './compile_src'
 
 use Sass::Plugin::Rack
-# use ToPrefixed
+use CompileSrc
 
-use Rack::Static,
-  :urls => ["/images", "/js", "/stylesheets"],
-  :root => "public"
+use Rack::Static, urls: %w(/images /js /stylesheets), root: 'public'
 
 run lambda { |env|
-  FileUtils.touch('public/index.html')
-
   [
     200,
     {
