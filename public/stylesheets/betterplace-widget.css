@@ -14,7 +14,7 @@
   line-height: 1.42;
   border-color: transparent;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  padding: 7px; }
+  padding: 7px 2px; }
   @media (min-width: 220px) {
     .button {
       font-size: 14px; } }
@@ -82,8 +82,13 @@ project {
     margin: 0;
     font-family: "Open Sans";
     font-size: 14px;
-    font-weight: 500;
+    line-height: 15px;
+    font-weight: 600;
     text-align: center; }
+    @media (min-width: 220px) {
+      project h1 {
+        font-size: 16px;
+        line-height: inherit; } }
   project .limited-width {
     min-width: 140px;
     max-width: 180px;
