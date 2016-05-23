@@ -18,8 +18,8 @@ riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{pr
           utm_medium: document.location.pathname.substring(1).replace(/s?\//, '_'),
           utm_content: encodeURI(this.record.title).substring(0,60),
           utm_campaign: 'widget',
-        }
-        var utm_query = '?' + Object.keys(utm).map(k => k + '=' + utm[k]).join('&');
+        };
+        var utm_query = '?' + Object.keys(utm).map(function(k, _) { return k + '=' + utm[k] }).join('&');
 
         this.profile_picture = this.find_link(this.record.profile_picture.links, 'fill_410x214')
         this.visit_url       = this.find_link(this.record.links, 'platform') + utm_query
