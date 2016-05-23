@@ -26,7 +26,6 @@ riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{pr
 
         if(this.client && this.client.project_url_template) {
           this.visit_url = this.client.project_url_template.replace('{project_id}', this.record.id)
-
         }
       }
     })
