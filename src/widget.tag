@@ -46,7 +46,8 @@ var TranslationMixin = {
       financed:             "financed",
       donate:               "View & donate",
       visit:                "Visit page",
-      donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
+      donations_prohibited: "At the moment you can't donate online.",
+      iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
     },
     de: {
       donor_count:          "Spender",
@@ -54,6 +55,7 @@ var TranslationMixin = {
       donate:               "Informieren & spenden",
       visit:                "Seite besuchen",
       donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
+      iefallback_text:      "In Ihrer Version des Internet Explorers können die Informationen leider nicht geladen werden. Bitte besuchen Sie uns direkt auf betterplace.org",
     }
   },
 
@@ -65,9 +67,12 @@ var TranslationMixin = {
 }
 
 <widget>
-  <project record_url={ record_url } client_url={ client_url }></project>
+  <project if={ !oldIE } record_url={ record_url } client_url={ client_url }></project>
+  <iefallback if={ oldIE }></iefallback>
 
   <script>
+    this.oldIE = !!window.oldIE
+
     this.api_hosts = {
       production:  'https://api.betterplace.org',
       staging:     'https://api.bp42.com',

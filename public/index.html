@@ -29,7 +29,16 @@
   </head>
   <body>
     <widget></widget>
-    <script src="/js/widget.min.js"></script>
+
+    <script type="text/javascript">
+      /*@cc_on
+        @if ((@_jscript_version == 10) || (@_jscript_version == 9))
+          window.oldIE = true;
+        @end
+      @*/
+    </script>
+
+    <script type="text/javascript" src="/js/widget.min.js"></script>
     <script type="text/javascript">riot.mount('widget')</script>
   </body>
 </html>

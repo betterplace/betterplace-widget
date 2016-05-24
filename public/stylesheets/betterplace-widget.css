@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
 .button {
   background-image: -webkit-linear-gradient(top, #bad304 0%, #99ad03 100%);
   background-image: -o-linear-gradient(top, #bad304 0%, #99ad03 100%);
@@ -37,7 +37,8 @@
 html,
 body,
 widget,
-project {
+project,
+iefallback {
   height: 100%; }
 
 body {
@@ -51,7 +52,8 @@ body {
   box-sizing: border-box; }
 
 widget,
-project {
+project,
+iefallback {
   display: block;
   max-height: 320px;
   position: relative; }
@@ -72,13 +74,16 @@ section {
       margin: 0 10px;
       width: calc(100% - 20px); } }
 
-project {
+project,
+iefallback {
   border: 1px solid #cccccc; }
-  project .image {
+  project .image,
+  iefallback .image {
     height: 170px;
     background-size: cover;
     background-position: 50% 50%; }
-  project h1 {
+  project h1,
+  iefallback h1 {
     margin: 0;
     font-family: "Open Sans";
     font-size: 14px;
@@ -86,47 +91,59 @@ project {
     font-weight: 600;
     text-align: center; }
     @media (min-width: 220px) {
-      project h1 {
+      project h1,
+      iefallback h1 {
         font-size: 16px;
         line-height: inherit; } }
-  project .limited-width {
+  project .limited-width,
+  iefallback .limited-width {
     min-width: 140px;
     max-width: 180px;
     margin: 0 auto; }
-  project .project-values {
+  project .project-values,
+  iefallback .project-values {
     margin: 10px 0;
     font-size: 0; }
-    project .project-values .value {
+    project .project-values .value,
+    iefallback .project-values .value {
       font-size: 16px;
       color: #636b70; }
       @media (min-width: 220px) {
-        project .project-values .value {
+        project .project-values .value,
+        iefallback .project-values .value {
           display: inline-block; } }
   project .donor-count,
-  project .progress-percentage {
+  project .progress-percentage,
+  iefallback .donor-count,
+  iefallback .progress-percentage {
     width: 50%;
     display: inline-block;
     vertical-align: top;
     font-size: 11px;
     color: #949494; }
-  project .donor-count:last-child {
+  project .donor-count:last-child,
+  iefallback .donor-count:last-child {
     width: 100%;
     text-align: center; }
-  project .progress-percentage {
+  project .progress-percentage,
+  iefallback .progress-percentage {
     text-align: right; }
-  project .project-status-message {
+  project .project-status-message,
+  iefallback .project-status-message {
     font-size: 13px;
     color: #636b70;
     text-align: center;
     margin: 15px 0; }
-  project .logo {
+  project .logo,
+  iefallback .logo {
     margin-top: 10px;
     padding-top: 10px;
     text-align: center;
     border-top: 1px solid #cccccc;
     color: #636b70;
     font-size: 10px; }
-    project .logo img {
+    project .logo img,
+    iefallback .logo img {
       max-width: 140px;
       max-height: 50px;
       display: block;

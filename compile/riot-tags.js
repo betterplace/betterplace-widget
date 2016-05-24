@@ -1,3 +1,13 @@
+riot.tag2('iefallback', '<div class="image" style="background-image: url(\'/images/fill_410x214_default.betterplace.jpg\');"></div><section class="content"><h1>{t.iefallback_text}</h1><div class="limited-width"><a target="_blank" class="button button-block" href="{visit_url}" style="margin-top: 15px">{t.visit}</a></div><div class="logo"><img src="/images/bp-org.png"></div></section>', '', '', function(opts) {
+    this.mixin(TranslationMixin)
+
+    this.on('update', function() {
+      var path = document.location.pathname;
+      path = path.replace('fundraising_events', 'fundraising-events')
+      this.visit_url = 'https://www.betterplace.org' + path;
+    })
+});
+
 riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{profile_picture}\');"></div><section class="content"><h1>{record.title}</h1><div class="limited-width"><div class="progress-bar" if="{record.progress_percentage}"><div class="bar" riot-style="width: {record.progress_percentage}%"></div></div><div if="{!record.donations_prohibited}" class="project-values"><div class="donor-count"><div class="value">{record.donor_count}</div> {t.donor_count} </div><div if="{record.progress_percentage}" class="progress-percentage"><div class="value">{record.progress_percentage} %</div> {t.financed} </div></div><div class="project-status-message" if="{record.donations_prohibited}"> {t.donations_prohibited} </div><a target="_blank" class="button button-block" if="{!record.donations_prohibited}" href="{visit_url}">{t.donate}</a><a target="_blank" class="button button-block" if="{record.donations_prohibited}" href="{visit_url}">{t.visit}</a></div><div class="logo" if="{client.widget_logo}"><img riot-src="{client.widget_logo}"><span>{client.widget_subline}</span></div><div class="logo" if="{!client || !client.widget_logo}"><img src="/images/bp-org.png"></div></section>', '', '', function(opts) {
     this.mixin(AjaxMixin)
     this.mixin(FindLinkMixin)
@@ -79,7 +89,8 @@ var TranslationMixin = {
       financed:             "financed",
       donate:               "View & donate",
       visit:                "Visit page",
-      donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
+      donations_prohibited: "At the moment you can't donate online.",
+      iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
     },
     de: {
       donor_count:          "Spender",
@@ -87,6 +98,7 @@ var TranslationMixin = {
       donate:               "Informieren & spenden",
       visit:                "Seite besuchen",
       donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
+      iefallback_text:      "In Ihrer Version des Internet Explorers können die Informationen leider nicht geladen werden. Bitte besuchen Sie uns direkt auf betterplace.org",
     }
   },
 
@@ -97,7 +109,9 @@ var TranslationMixin = {
    }
 }
 
-riot.tag2('widget', '<project record_url="{record_url}" client_url="{client_url}"></project>', '', '', function(opts) {
+riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url="{client_url}"></project><iefallback if="{oldIE}"></iefallback>', '', '', function(opts) {
+    this.oldIE = !!window.oldIE
+
     this.api_hosts = {
       production:  'https://api.betterplace.org',
       staging:     'https://api.bp42.com',
