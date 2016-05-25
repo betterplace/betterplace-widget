@@ -62,7 +62,6 @@
         var utm = {
           utm_source: document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget',
           utm_medium: document.location.pathname.substring(1).replace(/s?\//, '_'),
-          utm_content: encodeURI(this.record.title).substring(0,60),
           utm_campaign: 'widget',
         };
         var utm_query = '?' + Object.keys(utm).map(function(k, _) { return k + '=' + utm[k] }).join('&');
