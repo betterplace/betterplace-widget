@@ -108,7 +108,7 @@ var TranslationMixin = {
    }
 }
 
-riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url="{client_url}"></project><iefallback if="{oldIE}"></iefallback>', '', '', function(opts) {
+riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url="{client_url}"></project><iefallback if="{oldIE}"></iefallback>', '', 'class="{widgetClass}"', function(opts) {
     this.oldIE = !!window.oldIE
 
     this.api_hosts = {
@@ -121,6 +121,9 @@ riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url
     var api_host     = this.api_hosts[(params.env || 'production')]
     var api_base_url = api_host + '/' + this.lang + '/api_v4'
     this.record_url  = api_base_url + document.location.pathname
+
+    if(params.legacy)
+      this.widgetClass = 'legacy-size'
 
     if(params.client) {
       this.client_url = api_base_url + '/clients/' + params.client + '/widget_config'
