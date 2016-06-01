@@ -26,7 +26,6 @@ riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{pr
         var utm = {
           utm_source: document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget',
           utm_medium: document.location.pathname.substring(1).replace(/s?\//, '_'),
-          utm_content: encodeURI(this.record.title).substring(0,60),
           utm_campaign: 'widget',
         };
         var utm_query = '?' + Object.keys(utm).map(function(k, _) { return k + '=' + utm[k] }).join('&');
@@ -109,7 +108,7 @@ var TranslationMixin = {
    }
 }
 
-riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url="{client_url}"></project><iefallback if="{oldIE}"></iefallback>', '', '', function(opts) {
+riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url="{client_url}"></project><iefallback if="{oldIE}"></iefallback>', '', 'class="{widgetClass}"', function(opts) {
     this.oldIE = !!window.oldIE
 
     this.api_hosts = {
@@ -122,6 +121,9 @@ riot.tag2('widget', '<project if="{!oldIE}" record_url="{record_url}" client_url
     var api_host     = this.api_hosts[(params.env || 'production')]
     var api_base_url = api_host + '/' + this.lang + '/api_v4'
     this.record_url  = api_base_url + document.location.pathname
+
+    if(params.legacy)
+      this.widgetClass = 'legacy-size'
 
     if(params.client) {
       this.client_url = api_base_url + '/clients/' + params.client + '/widget_config'

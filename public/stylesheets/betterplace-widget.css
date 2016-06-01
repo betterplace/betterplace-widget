@@ -60,7 +60,37 @@ iefallback {
 
 widget {
   min-width: 160px;
-  max-width: 320px; }
+  max-width: 320px;
+  background-color: white; }
+
+widget.legacy-size .image, iefallback.legacy-size .image {
+  background-size: 200px;
+  background-repeat: no-repeat;
+  background-position: 50% 0; }
+widget.legacy-size .content, iefallback.legacy-size .content {
+  padding: 5px 10px 5px 10px; }
+widget.legacy-size .progress-percentage, iefallback.legacy-size .progress-percentage {
+  display: none; }
+widget.legacy-size .progress-bar, iefallback.legacy-size .progress-bar {
+  margin: 10px 0 5px 0; }
+widget.legacy-size .project-values, iefallback.legacy-size .project-values {
+  margin: 5px 0; }
+widget.legacy-size .donor-count, iefallback.legacy-size .donor-count {
+  width: 100%;
+  text-align: center; }
+  widget.legacy-size .donor-count .value, iefallback.legacy-size .donor-count .value {
+    display: inline;
+    font-size: inherit; }
+widget.legacy-size .project-status-message, iefallback.legacy-size .project-status-message {
+  font-size: 11px;
+  margin: 5px 0; }
+widget.legacy-size .logo, iefallback.legacy-size .logo {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 5px; }
+  widget.legacy-size .logo img, iefallback.legacy-size .logo img {
+    margin-bottom: 0;
+    max-height: 25px; }
 
 section {
   position: absolute;
