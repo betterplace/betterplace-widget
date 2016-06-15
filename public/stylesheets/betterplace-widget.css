@@ -24,7 +24,7 @@
 .progress-bar {
   background: #eeeeee;
   border-radius: 3px;
-  margin: 15px 0 10px 0; }
+  margin: 5px 0 0 0; }
   .progress-bar .bar {
     height: 10px;
     background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
@@ -55,7 +55,7 @@ widget,
 project,
 iefallback {
   display: block;
-  max-height: 320px;
+  max-height: 370px;
   position: relative; }
 
 widget {
@@ -93,25 +93,17 @@ widget.legacy-size .logo, iefallback.legacy-size .logo {
     max-height: 25px; }
 
 section {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  background: white; }
-  @media (min-width: 220px) {
-    section {
-      margin: 0 10px;
-      width: calc(100% - 20px); } }
+  padding: 10px; }
 
 project,
 iefallback {
   border: 1px solid #cccccc; }
   project .image,
   iefallback .image {
-    height: 170px;
-    background-size: cover;
-    background-position: 50% 50%; }
+    height: 52vw;
+    background-size: contain;
+    background-position: 0 0;
+    background-repeat: no-repeat; }
   project h1,
   iefallback h1 {
     margin: 0;
@@ -163,13 +155,11 @@ iefallback {
     font-size: 13px;
     color: #636b70;
     text-align: center;
-    margin: 15px 0; }
+    margin: 10px 0; }
   project .logo,
   iefallback .logo {
     margin-top: 10px;
-    padding-top: 10px;
     text-align: center;
-    border-top: 1px solid #cccccc;
     color: #636b70;
     font-size: 10px; }
     project .logo img,
