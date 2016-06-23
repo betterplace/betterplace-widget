@@ -2,7 +2,7 @@
   <div class="image" style="background-image: url('{ profile_picture }');">
   </div>
 
-  <section class="content">
+  <section class="content"><div>
 
     <h1>{ record.title }</h1>
 
@@ -42,7 +42,7 @@
       <img src="/images/bp-org.png"/>
     </div>
 
-  </section>
+  <div></section>
 
   <script>
     this.mixin(AjaxMixin)

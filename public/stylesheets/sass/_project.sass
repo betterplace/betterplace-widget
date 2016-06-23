@@ -1,23 +1,38 @@
 project,
 iefallback
-  border: 1px solid $light-grey
+  $border-width: 1px
+  border: $border-width solid $light-grey
 
   .image
-    height: 170px
+    $image-height: 43vh
+    height: 52vw
+    max-height: $image-height
     background-size: cover
-    background-position: 50% 50%
+    background-position: 50% 10%
+    background-repeat: no-repeat
+
+    \+ section
+      display: flex
+      -webkit-box-pack: center
+      -webkit-box-align: center
+      height: 71vh
+
+      +wide
+        height: 56.8vh
+
+      \>div
+        align-self: center
+        width: 100%
 
   h1
-    margin: 0
+    margin: 0 0 10px 0
     font-family: "Open Sans"
-    font-size: 14px
-    line-height: 14.8px
     font-weight: 600
     text-align: center
-
+    word-break: break-word
+    font-size: 14px
     +wide
-      font-size: 16px
-      line-height: inherit
+      font-size: 15.5px
 
   .limited-width
     min-width: 140px
@@ -54,13 +69,11 @@ iefallback
     font-size: 13px
     color: $dark-grey
     text-align: center
-    margin: 15px 0
+    margin: 10px 0
 
   .logo
     margin-top: 10px
-    padding-top: 10px
     text-align: center
-    border-top: 1px solid $light-grey
     color: $dark-grey
     font-size: 10px
 

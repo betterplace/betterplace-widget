@@ -19,7 +19,7 @@ widget,
 project,
 iefallback
   display: block
-  max-height: 320px
+  max-height: 370px
   position: relative
 
 widget
@@ -28,44 +28,37 @@ widget
   background-color: white
 
 // Special styling for migration phase. Review 2017
-widget.legacy-size, iefallback.legacy-size
-  .image
-    background-size: 200px
-    background-repeat: no-repeat
-    background-position: 50% 0
-  .content
-    padding: 5px 10px 5px 10px
-  .progress-percentage
-    display: none
-  .progress-bar
-    margin: 10px 0 5px 0
-  .project-values
-    margin: 5px 0
-  .donor-count
-    width: 100%
-    text-align: center
-    .value
-      display: inline
-      font-size: inherit
-  .project-status-message
-    font-size: 11px
-    margin: 5px 0
-  .logo
-    border-top: 0
-    margin-top: 0
-    padding-top: 5px
-    img
-      margin-bottom: 0
-      max-height: 25px
+widget,
+iefallback
+  &.legacy-size
+    .image
+      background-size: 200px
+      background-repeat: no-repeat
+      background-position: 50% 0
+    .content
+      padding: 5px 10px 5px 10px
+    .progress-percentage
+      display: none
+    .progress-bar
+      margin: 10px 0 5px 0
+    .project-values
+      margin: 5px 0
+    .donor-count
+      width: 100%
+      text-align: center
+      .value
+        display: inline
+        font-size: inherit
+    .project-status-message
+      font-size: 11px
+      margin: 5px 0
+    .logo
+      border-top: 0
+      margin-top: 0
+      padding-top: 5px
+      img
+        margin-bottom: 0
+        max-height: 25px
 
 section
-  position: absolute
-  bottom: 0
-  left: 0
-  width: 100%
   padding: 10px
-  background: white
-
-  +wide
-    margin: 0 10px
-    width: calc(100% - 20px)

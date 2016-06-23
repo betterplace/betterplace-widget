@@ -24,7 +24,7 @@
 .progress-bar {
   background: #eeeeee;
   border-radius: 3px;
-  margin: 15px 0 10px 0; }
+  margin: 5px 0 0 0; }
   .progress-bar .bar {
     height: 10px;
     background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
@@ -32,7 +32,8 @@
     background-image: linear-gradient(to bottom, #bad304 0%, #a8bf04 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
-    border-radius: 3px; }
+    border-radius: 3px;
+    max-width: 100%; }
 
 html,
 body,
@@ -55,7 +56,7 @@ widget,
 project,
 iefallback {
   display: block;
-  max-height: 320px;
+  max-height: 370px;
   position: relative; }
 
 widget {
@@ -63,68 +64,84 @@ widget {
   max-width: 320px;
   background-color: white; }
 
-widget.legacy-size .image, iefallback.legacy-size .image {
+widget.legacy-size .image,
+iefallback.legacy-size .image {
   background-size: 200px;
   background-repeat: no-repeat;
   background-position: 50% 0; }
-widget.legacy-size .content, iefallback.legacy-size .content {
+widget.legacy-size .content,
+iefallback.legacy-size .content {
   padding: 5px 10px 5px 10px; }
-widget.legacy-size .progress-percentage, iefallback.legacy-size .progress-percentage {
+widget.legacy-size .progress-percentage,
+iefallback.legacy-size .progress-percentage {
   display: none; }
-widget.legacy-size .progress-bar, iefallback.legacy-size .progress-bar {
+widget.legacy-size .progress-bar,
+iefallback.legacy-size .progress-bar {
   margin: 10px 0 5px 0; }
-widget.legacy-size .project-values, iefallback.legacy-size .project-values {
+widget.legacy-size .project-values,
+iefallback.legacy-size .project-values {
   margin: 5px 0; }
-widget.legacy-size .donor-count, iefallback.legacy-size .donor-count {
+widget.legacy-size .donor-count,
+iefallback.legacy-size .donor-count {
   width: 100%;
   text-align: center; }
-  widget.legacy-size .donor-count .value, iefallback.legacy-size .donor-count .value {
+  widget.legacy-size .donor-count .value,
+  iefallback.legacy-size .donor-count .value {
     display: inline;
     font-size: inherit; }
-widget.legacy-size .project-status-message, iefallback.legacy-size .project-status-message {
+widget.legacy-size .project-status-message,
+iefallback.legacy-size .project-status-message {
   font-size: 11px;
   margin: 5px 0; }
-widget.legacy-size .logo, iefallback.legacy-size .logo {
+widget.legacy-size .logo,
+iefallback.legacy-size .logo {
   border-top: 0;
   margin-top: 0;
   padding-top: 5px; }
-  widget.legacy-size .logo img, iefallback.legacy-size .logo img {
+  widget.legacy-size .logo img,
+  iefallback.legacy-size .logo img {
     margin-bottom: 0;
     max-height: 25px; }
 
 section {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 10px;
-  background: white; }
-  @media (min-width: 220px) {
-    section {
-      margin: 0 10px;
-      width: calc(100% - 20px); } }
+  padding: 10px; }
 
 project,
 iefallback {
   border: 1px solid #cccccc; }
   project .image,
   iefallback .image {
-    height: 170px;
+    height: 52vw;
+    max-height: 43vh;
     background-size: cover;
-    background-position: 50% 50%; }
+    background-position: 50% 10%;
+    background-repeat: no-repeat; }
+    project .image + section,
+    iefallback .image + section {
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      height: 71vh; }
+      @media (min-width: 220px) {
+        project .image + section,
+        iefallback .image + section {
+          height: 56.8vh; } }
+      project .image + section > div,
+      iefallback .image + section > div {
+        align-self: center;
+        width: 100%; }
   project h1,
   iefallback h1 {
-    margin: 0;
+    margin: 0 0 10px 0;
     font-family: "Open Sans";
-    font-size: 14px;
-    line-height: 14.8px;
     font-weight: 600;
-    text-align: center; }
+    text-align: center;
+    word-break: break-word;
+    font-size: 14px; }
     @media (min-width: 220px) {
       project h1,
       iefallback h1 {
-        font-size: 16px;
-        line-height: inherit; } }
+        font-size: 15.5px; } }
   project .limited-width,
   iefallback .limited-width {
     min-width: 140px;
@@ -163,13 +180,11 @@ iefallback {
     font-size: 13px;
     color: #636b70;
     text-align: center;
-    margin: 15px 0; }
+    margin: 10px 0; }
   project .logo,
   iefallback .logo {
     margin-top: 10px;
-    padding-top: 10px;
     text-align: center;
-    border-top: 1px solid #cccccc;
     color: #636b70;
     font-size: 10px; }
     project .logo img,
