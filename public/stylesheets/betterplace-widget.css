@@ -210,8 +210,8 @@ iefallback {
       margin-top: 5px; }
 
 iefallback .image {
-  height: 150px; }
-iefallback .content {
-  height: 200px; }
+  height: 120px; }
+  iefallback .image + section {
+    height: 200px; }
 
 /*# sourceMappingURL=betterplace-widget.css.map */
