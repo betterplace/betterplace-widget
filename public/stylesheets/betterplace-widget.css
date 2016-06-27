@@ -24,7 +24,7 @@
 .progress-bar {
   background: #eeeeee;
   border-radius: 3px;
-  margin: 5px 0 0 0; }
+  margin: 5px 0; }
   .progress-bar .bar {
     height: 10px;
     background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
@@ -56,7 +56,7 @@ widget,
 project,
 iefallback {
   display: block;
-  max-height: 370px;
+  max-height: 320px;
   position: relative; }
 
 widget {
@@ -121,7 +121,7 @@ iefallback {
       display: flex;
       -webkit-box-pack: center;
       -webkit-box-align: center;
-      height: 71vh; }
+      height: 67vh; }
       @media (min-width: 220px) {
         project .image + section,
         iefallback .image + section {
@@ -132,16 +132,19 @@ iefallback {
         width: 100%; }
   project h1,
   iefallback h1 {
-    margin: 0 0 10px 0;
+    margin: 0 0 5px 0;
     font-family: "Open Sans";
     font-weight: 600;
     text-align: center;
     word-break: break-word;
-    font-size: 14px; }
+    font-size: 14px;
+    line-height: 16px; }
     @media (min-width: 220px) {
       project h1,
       iefallback h1 {
-        font-size: 15.5px; } }
+        margin: 0 0 10px 0;
+        font-size: 15.5px;
+        line-height: 17px; } }
   project .limited-width,
   iefallback .limited-width {
     min-width: 140px;
@@ -149,8 +152,12 @@ iefallback {
     margin: 0 auto; }
   project .project-values,
   iefallback .project-values {
-    margin: 10px 0;
+    margin: 5px 0;
     font-size: 0; }
+    @media (min-width: 220px) {
+      project .project-values,
+      iefallback .project-values {
+        margin: 10px 0; } }
     project .project-values .value,
     iefallback .project-values .value {
       font-size: 16px;
@@ -177,10 +184,11 @@ iefallback {
     text-align: right; }
   project .project-status-message,
   iefallback .project-status-message {
-    font-size: 13px;
+    font-size: 12px;
+    line-height: 12px;
     color: #636b70;
     text-align: center;
-    margin: 10px 0; }
+    margin: 5px 0 10px 0; }
   project .logo,
   iefallback .logo {
     margin-top: 10px;
@@ -190,12 +198,15 @@ iefallback {
     project .logo img,
     iefallback .logo img {
       max-width: 140px;
-      max-height: 50px;
+      max-height: 30px;
       display: block;
       margin: 0 auto; }
+      project .logo img.betterplace-logo,
+      iefallback .logo img.betterplace-logo {
+        margin-top: -5px; }
     project .logo span,
     iefallback .logo span {
       display: inline-block;
-      margin-top: 10px; }
+      margin-top: 5px; }
 
 /*# sourceMappingURL=betterplace-widget.css.map */

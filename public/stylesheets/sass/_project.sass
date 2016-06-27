@@ -15,7 +15,7 @@ iefallback
       display: flex
       -webkit-box-pack: center
       -webkit-box-align: center
-      height: 71vh
+      height: 67vh
 
       +wide
         height: 56.8vh
@@ -25,14 +25,17 @@ iefallback
         width: 100%
 
   h1
-    margin: 0 0 10px 0
+    margin: 0 0 5px 0
     font-family: "Open Sans"
     font-weight: 600
     text-align: center
     word-break: break-word
     font-size: 14px
+    line-height: 16px
     +wide
+      margin: 0 0 10px 0
       font-size: 15.5px
+      line-height: 17px
 
   .limited-width
     min-width: 140px
@@ -40,8 +43,10 @@ iefallback
     margin: 0 auto
 
   .project-values
-    margin: 10px 0
+    margin: 5px 0
     font-size: 0
+    +wide
+      margin: 10px 0
 
     .value
       font-size: 16px
@@ -66,10 +71,11 @@ iefallback
     text-align: right
 
   .project-status-message
-    font-size: 13px
+    font-size: 12px
+    line-height: 12px
     color: $dark-grey
     text-align: center
-    margin: 10px 0
+    margin: 5px 0 10px 0
 
   .logo
     margin-top: 10px
@@ -79,10 +85,13 @@ iefallback
 
     img
       max-width: 140px
-      max-height: 50px
+      max-height: 30px
       display: block
       margin: 0 auto
 
+      &.betterplace-logo
+        margin-top: -5px
+
     span
       display: inline-block
-      margin-top: 10px
+      margin-top: 5px

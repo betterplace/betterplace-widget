@@ -8,12 +8,13 @@
 
     <div class="limited-width">
 
-      <div class="progress-bar" if={ record.progress_percentage }>
-        <div class="bar" style="width: { record.progress_percentage }%">
-        </div>
-      </div>
-
       <div if={ !record.donations_prohibited } class="project-values">
+
+        <div class="progress-bar" if={ record.progress_percentage }>
+          <div class="bar" style="width: { record.progress_percentage }%">
+          </div>
+        </div>
+
         <div class="donor-count">
           <div class="value">{ record.donor_count }</div>
           { t.donor_count }
@@ -39,7 +40,7 @@
     </div>
 
     <div class="logo" if={ !client || !client.widget_logo }>
-      <img src="/images/bp-org.png"/>
+      <img class="betterplace-logo" src="/images/bp-org.png"/>
     </div>
 
   <div></section>
