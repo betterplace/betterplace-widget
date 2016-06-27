@@ -209,4 +209,9 @@ iefallback {
       display: inline-block;
       margin-top: 5px; }
 
+iefallback .image {
+  height: 150px; }
+iefallback .content {
+  height: 200px; }
+
 /*# sourceMappingURL=betterplace-widget.css.map */
