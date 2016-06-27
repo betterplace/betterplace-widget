@@ -203,7 +203,7 @@ iefallback {
       margin: 0 auto; }
       project .logo img.betterplace-logo,
       iefallback .logo img.betterplace-logo {
-        margin-top: -5px; }
+        margin-top: -2px; }
     project .logo span,
     iefallback .logo span {
       display: inline-block;
