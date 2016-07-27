@@ -198,7 +198,7 @@ iefallback {
     project .logo img,
     iefallback .logo img {
       max-width: 140px;
-      max-height: 30px;
+      max-height: 25px;
       display: block;
       margin: 0 auto; }
       project .logo img.betterplace-logo,
