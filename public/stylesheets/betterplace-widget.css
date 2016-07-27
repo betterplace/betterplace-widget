@@ -142,7 +142,6 @@ iefallback {
     @media (min-width: 220px) {
       project h1,
       iefallback h1 {
-        margin: 0 0 10px 0;
         font-size: 15.5px;
         line-height: 17px; } }
   project .limited-width,
@@ -154,10 +153,6 @@ iefallback {
   iefallback .project-values {
     margin: 5px 0;
     font-size: 0; }
-    @media (min-width: 220px) {
-      project .project-values,
-      iefallback .project-values {
-        margin: 10px 0; } }
     project .project-values .value,
     iefallback .project-values .value {
       font-size: 16px;
