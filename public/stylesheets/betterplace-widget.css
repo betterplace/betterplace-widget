@@ -112,9 +112,9 @@ iefallback {
   project .image,
   iefallback .image {
     height: 52vw;
-    max-height: 43vh;
+    max-height: 40vh;
     background-size: cover;
-    background-position: 50% 10%;
+    background-position: 50% 25%;
     background-repeat: no-repeat; }
     project .image + section,
     iefallback .image + section {
