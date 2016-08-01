@@ -125,7 +125,7 @@ iefallback {
       @media (min-width: 220px) {
         project .image + section,
         iefallback .image + section {
-          height: 56.8vh; } }
+          height: 59.3vh; } }
       project .image + section > div,
       iefallback .image + section > div {
         align-self: center;
