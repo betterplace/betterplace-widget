@@ -4,7 +4,7 @@ require './compile_src'
 
 use Sass::Plugin::Rack
 use CompileSrc
-
+use LetsencryptRack::Middleware
 use Rack::Static, urls: %w(/images /js /stylesheets), root: 'public'
 
 run lambda { |env|

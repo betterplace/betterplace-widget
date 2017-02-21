@@ -1,0 +1,3 @@
+- contact: sheriff@betterplace.org
+  domains: www.betterplace-widget.org betterplace-widget.org
+  heroku_app: betterplace-widget
