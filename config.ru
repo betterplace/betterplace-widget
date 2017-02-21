@@ -1,5 +1,6 @@
 require 'sass/plugin/rack'
 require 'fileutils'
+require 'letsencrypt_rack'
 require './compile_src'
 
 use Sass::Plugin::Rack
