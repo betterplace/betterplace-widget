@@ -4,7 +4,7 @@
 
   <section class="content"><div>
 
-    <h1>{ record.title }</h1>
+    <h1><unsafe-html html={ record.title } /></h1>
 
     <div class="limited-width">
 
