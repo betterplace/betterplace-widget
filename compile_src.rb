@@ -19,12 +19,12 @@ class CompileSrc
     `riot --compact src/ compile/riot-tags.js`
 
     # Merge js files
-    js_files = %w(
+    js_files = %w[
       compile/es6-promise.js
       compile/fetch.js
       compile/riot.js
       compile/riot-tags.js
-    )
+    ]
     js_content = js_files.map { |file| File.read(file) }.join("\n")
     File.write('public/js/widget.min.js', js_content)
   end
