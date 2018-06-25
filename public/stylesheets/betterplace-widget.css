@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:600");
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600");
 .button {
   background-image: -webkit-linear-gradient(top, #bad304 0%, #99ad03 100%);
   background-image: -o-linear-gradient(top, #bad304 0%, #99ad03 100%);
@@ -14,7 +14,8 @@
   line-height: 1.42;
   border-color: transparent;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  padding: 7px 2px; }
+  padding: 7px 2px;
+  font-family: "Fira Sans", sans-serif; }
   @media (min-width: 220px) {
     .button {
       font-size: 14px; } }
@@ -133,7 +134,7 @@ iefallback {
   project h1,
   iefallback h1 {
     margin: 0 0 5px 0;
-    font-family: "Open Sans";
+    font-family: "Fira Sans";
     font-weight: 600;
     text-align: center;
     word-break: break-word;
