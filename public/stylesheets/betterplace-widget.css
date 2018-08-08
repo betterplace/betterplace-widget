@@ -82,12 +82,12 @@ iefallback.legacy-size .progress-bar {
 widget.legacy-size .project-values,
 iefallback.legacy-size .project-values {
   margin: 5px 0; }
-widget.legacy-size .donor-count,
-iefallback.legacy-size .donor-count {
+widget.legacy-size .donations-count,
+iefallback.legacy-size .donations-count {
   width: 100%;
   text-align: center; }
-  widget.legacy-size .donor-count .value,
-  iefallback.legacy-size .donor-count .value {
+  widget.legacy-size .donations-count .value,
+  iefallback.legacy-size .donations-count .value {
     display: inline;
     font-size: inherit; }
 widget.legacy-size .project-status-message,
@@ -162,17 +162,17 @@ iefallback {
         project .project-values .value,
         iefallback .project-values .value {
           display: inline-block; } }
-  project .donor-count,
+  project .donations-count,
   project .progress-percentage,
-  iefallback .donor-count,
+  iefallback .donations-count,
   iefallback .progress-percentage {
     width: 50%;
     display: inline-block;
     vertical-align: top;
     font-size: 11px;
     color: #949494; }
-  project .donor-count:last-child,
-  iefallback .donor-count:last-child {
+  project .donations-count:last-child,
+  iefallback .donations-count:last-child {
     width: 100%;
     text-align: center; }
   project .progress-percentage,
