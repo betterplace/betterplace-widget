@@ -1,6 +1,6 @@
 # betterplace project widget
 
-Build with [riot.js](http://riotjs.com/)
+Build with [riot.js](https://riot.js.org/)
 
 To locally serve the index.html use `rackup -s Puma`
 
