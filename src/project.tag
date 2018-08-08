@@ -15,9 +15,9 @@
           </div>
         </div>
 
-        <div class="donor-count">
-          <div class="value">{ record.donor_count }</div>
-          { t.donor_count }
+        <div class="donations-count">
+          <div class="value">{ record.donations_count }</div>
+          { t.donations_count }
         </div>
         <div if={ record.progress_percentage} class="progress-percentage">
           <div class="value">{ record.progress_percentage } %</div>

@@ -42,7 +42,7 @@ var FindLinkMixin = {
 var TranslationMixin = {
   translations: {
     en: {
-      donor_count:          "Donors",
+      donations_count:      "Donations",
       financed:             "financed",
       donate:               "View & donate",
       visit:                "Visit page",
@@ -50,7 +50,7 @@ var TranslationMixin = {
       iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
     },
     de: {
-      donor_count:          "Spender",
+      donations_count:      "Spenden",
       financed:             "finanziert",
       donate:               "Informieren & spenden",
       visit:                "Seite besuchen",
