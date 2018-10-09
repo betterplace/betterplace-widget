@@ -40,7 +40,7 @@
     </div>
 
     <div class="logo" if={ !client || !client.widget_logo }>
-      <img class="betterplace-logo" src="/images/bp-org.png"/>
+      <img class="betterplace-logo" src="/images/bp-logo.png"/>
     </div>
 
   <div></section>
