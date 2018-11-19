@@ -1,21 +1,29 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    acme-client (2.0.0)
+    acme-client (1.0.0)
       faraday (~> 0.9, >= 0.9.1)
-    faraday (0.15.2)
+    faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
-    letsencrypt_heroku (0.2.14)
-      acme-client
+    ffi (1.9.25)
+    letsencrypt_heroku (0.2.15)
+      acme-client (~> 1.0.0)
       rainbow
       slop
       tty-spinner
-    letsencrypt_rack (0.1.1)
+    letsencrypt_rack (0.1.2)
     multipart-post (2.0.0)
-    puma (3.4.0)
-    rack (1.6.4)
+    puma (3.12.0)
+    rack (2.0.6)
     rainbow (3.0.0)
-    sass (3.4.22)
+    rb-fsevent (0.10.3)
+    rb-inotify (0.9.10)
+      ffi (>= 0.5.0, < 2)
+    sass (3.7.2)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     slop (4.6.2)
     tty-cursor (0.6.0)
     tty-spinner (0.8.0)
@@ -35,4 +43,4 @@ RUBY VERSION
    ruby 2.5.3p105
 
 BUNDLED WITH
-   1.16.6
+   1.17.1
