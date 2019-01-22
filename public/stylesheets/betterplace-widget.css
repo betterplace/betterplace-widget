@@ -134,7 +134,7 @@ iefallback {
   project h1,
   iefallback h1 {
     margin: 0 0 5px 0;
-    font-family: "Fira Sans";
+    font-family: "Fira Sans", sans-serif;
     font-weight: 600;
     text-align: center;
     word-break: break-word;
@@ -178,6 +178,23 @@ iefallback {
   project .progress-percentage,
   iefallback .progress-percentage {
     text-align: right; }
+  project .privacy-policy-link,
+  iefallback .privacy-policy-link {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    display: block;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background: #888;
+    color: white;
+    font: italic bold 10px/1.5 serif;
+    text-decoration: none; }
+    project .privacy-policy-link:hover,
+    iefallback .privacy-policy-link:hover {
+      background: #aaa; }
   project .project-status-message,
   iefallback .project-status-message {
     font-size: 12px;

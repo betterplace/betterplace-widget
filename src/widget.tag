@@ -48,6 +48,8 @@ var TranslationMixin = {
       visit:                "Visit page",
       donations_prohibited: "At the moment you can't donate online.",
       iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
+      privacy_policy_url:   "https://www.betterplace.org/c/rules/privacy-policy",
+      privacy_policy_text:  "View privacy policy",
     },
     de: {
       donations_count:      "Spenden",
@@ -56,6 +58,8 @@ var TranslationMixin = {
       visit:                "Seite besuchen",
       donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
       iefallback_text:      "In Ihrer Version des Internet Explorers können die Informationen leider nicht geladen werden. Bitte besuchen Sie uns direkt auf betterplace.org",
+      privacy_policy_url:   "https://www.betterplace.org/c/regeln/datenschutz",
+      privacy_policy_text:  "Datenschutzerklärung anzeigen",
     }
   },
 

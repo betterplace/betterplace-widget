@@ -2,48 +2,46 @@
   <div class="image" style="background-image: url('{ profile_picture }');">
   </div>
 
-  <section class="content"><div>
+  <section class="content">
+    <div>
+      <h1><unsafe-html html={ record.title } /></h1>
 
-    <h1><unsafe-html html={ record.title } /></h1>
+      <div class="limited-width">
+        <div if={ !record.donations_prohibited } class="project-values">
+          <div class="progress-bar" if={ record.progress_percentage }>
+            <div class="bar" style="width: { record.progress_percentage }%">
+            </div>
+          </div>
 
-    <div class="limited-width">
-
-      <div if={ !record.donations_prohibited } class="project-values">
-
-        <div class="progress-bar" if={ record.progress_percentage }>
-          <div class="bar" style="width: { record.progress_percentage }%">
+          <div class="donations-count">
+            <div class="value">{ record.donations_count }</div>
+            { t.donations_count }
+          </div>
+          <div if={ record.progress_percentage} class="progress-percentage">
+            <div class="value">{ record.progress_percentage } %</div>
+            { t.financed }
           </div>
         </div>
 
-        <div class="donations-count">
-          <div class="value">{ record.donations_count }</div>
-          { t.donations_count }
+        <div class="project-status-message" if={ record.donations_prohibited }>
+          { t.donations_prohibited }
         </div>
-        <div if={ record.progress_percentage} class="progress-percentage">
-          <div class="value">{ record.progress_percentage } %</div>
-          { t.financed }
-        </div>
+
+        <a target="_blank" class="button button-block" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
+        <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
       </div>
 
-      <div class="project-status-message" if={ record.donations_prohibited }>
-        { t.donations_prohibited }
+      <div class="logo" if={ client.widget_logo }>
+        <img src={ client.widget_logo }/>
+        <span>{ client.widget_subline }</span>
       </div>
 
-      <a target="_blank" class="button button-block" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
-      <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
-
-    </div>
-
-    <div class="logo" if={ client.widget_logo }>
-      <img src={ client.widget_logo }/>
-      <span>{ client.widget_subline }</span>
-    </div>
-
-    <div class="logo" if={ !client || !client.widget_logo }>
-      <img class="betterplace-logo" src="/images/bp-logo.png"/>
-    </div>
-
-  <div></section>
+      <div class="logo" if={ !client || !client.widget_logo }>
+        <img class="betterplace-logo" src="/images/bp-logo.png"/>
+      </div>
+      <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
+    <div>
+  </section>
 
   <script>
     this.mixin(AjaxMixin)

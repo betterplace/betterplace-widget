@@ -8,7 +8,7 @@ riot.tag2('iefallback', '<div class="image" style="background-image: url(\'/imag
     })
 });
 
-riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{profile_picture}\');"></div><section class="content"><div><h1><unsafe-html html="{record.title}"></unsafe-html></h1><div class="limited-width"><div if="{!record.donations_prohibited}" class="project-values"><div class="progress-bar" if="{record.progress_percentage}"><div class="bar" riot-style="width: {record.progress_percentage}%"></div></div><div class="donations-count"><div class="value">{record.donations_count}</div> {t.donations_count} </div><div if="{record.progress_percentage}" class="progress-percentage"><div class="value">{record.progress_percentage} %</div> {t.financed} </div></div><div class="project-status-message" if="{record.donations_prohibited}"> {t.donations_prohibited} </div><a target="_blank" class="button button-block" if="{!record.donations_prohibited}" href="{visit_url}">{t.donate}</a><a target="_blank" class="button button-block" if="{record.donations_prohibited}" href="{visit_url}">{t.visit}</a></div><div class="logo" if="{client.widget_logo}"><img riot-src="{client.widget_logo}"><span>{client.widget_subline}</span></div><div class="logo" if="{!client || !client.widget_logo}"><img class="betterplace-logo" src="/images/bp-logo.png"></div><div></section>', '', '', function(opts) {
+riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{profile_picture}\');"></div><section class="content"><div><h1><unsafe-html html="{record.title}"></unsafe-html></h1><div class="limited-width"><div if="{!record.donations_prohibited}" class="project-values"><div class="progress-bar" if="{record.progress_percentage}"><div class="bar" riot-style="width: {record.progress_percentage}%"></div></div><div class="donations-count"><div class="value">{record.donations_count}</div> {t.donations_count} </div><div if="{record.progress_percentage}" class="progress-percentage"><div class="value">{record.progress_percentage} %</div> {t.financed} </div></div><div class="project-status-message" if="{record.donations_prohibited}"> {t.donations_prohibited} </div><a target="_blank" class="button button-block" if="{!record.donations_prohibited}" href="{visit_url}">{t.donate}</a><a target="_blank" class="button button-block" if="{record.donations_prohibited}" href="{visit_url}">{t.visit}</a></div><div class="logo" if="{client.widget_logo}"><img riot-src="{client.widget_logo}"><span>{client.widget_subline}</span></div><div class="logo" if="{!client || !client.widget_logo}"><img class="betterplace-logo" src="/images/bp-logo.png"></div><a href="{t.privacy_policy_url}" target="_blank" class="privacy-policy-link" title="{t.privacy_policy_text}">i</a><div></section>', '', '', function(opts) {
     this.mixin(AjaxMixin)
     this.mixin(FindLinkMixin)
     this.mixin(TranslationMixin)
@@ -96,6 +96,8 @@ var TranslationMixin = {
       visit:                "Visit page",
       donations_prohibited: "At the moment you can't donate online.",
       iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
+      privacy_policy_url:   "https://www.betterplace.org/c/rules/privacy-policy",
+      privacy_policy_text:  "View privacy policy",
     },
     de: {
       donations_count:      "Spenden",
@@ -104,6 +106,8 @@ var TranslationMixin = {
       visit:                "Seite besuchen",
       donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
       iefallback_text:      "In Ihrer Version des Internet Explorers können die Informationen leider nicht geladen werden. Bitte besuchen Sie uns direkt auf betterplace.org",
+      privacy_policy_url:   "https://www.betterplace.org/c/regeln/datenschutz",
+      privacy_policy_text:  "Datenschutzerklärung anzeigen",
     }
   },
 
