@@ -8,4 +8,4 @@ And serve to `http://localhost:9292/projects/1114`
 
 ## Development
 
-`npm install riot -g`
+`npm install riot @riotjs/cli -g`
