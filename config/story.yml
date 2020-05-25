@@ -1,0 +1,7 @@
+---
+pivotal_token:   <%= ENV['PIVOTAL_TOKEN'] %>
+pivotal_project: 1254912
+deploy_tag_prefix: production_deploy_
+deploy_tag_command: "scalingo --app betterplace-widget deployments | grep -v + | egrep -v '[A-Z]' | cut -d '|' -f 3,6 | sed -e 's/ //g' -e 's/|/ /' | tail -r"
+semaphore_auth_token: <%= ENV['SEMAPHORE_AUTH_TOKEN'] %>
+semaphore_project: d22431f3-2f19-4469-94e1-0400734f2478
