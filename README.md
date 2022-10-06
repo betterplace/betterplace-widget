@@ -1,14 +1,16 @@
 # betterplace project widget
 
-Build with [riot.js](https://riot.js.org/)
-
-To locally serve the index.html use `rackup -s Puma`
-
-And serve to `http://localhost:9292/projects/1114`
-
 ## Development
 
-`npm install riot @riotjs/cli -g`
+Setup with
+
+`$ setup`
+
+and start rack with
+
+`$ start`
+
+Then, surf to http://localhost:9292/projects/1114
 
 ## License
 
