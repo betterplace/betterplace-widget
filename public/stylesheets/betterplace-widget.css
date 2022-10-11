@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans:600");
+@import url("https://betterplace-assets.betterplace.org/packs/media/fira-sans-v10-latin/fira-sans-v11-latin-ext_latin-600-0bc8595c.woff2");
 .button {
   background-image: -webkit-linear-gradient(top, #bad304 0%, #99ad03 100%);
   background-image: -o-linear-gradient(top, #bad304 0%, #99ad03 100%);
@@ -23,12 +23,16 @@
     display: block; }
 
 .progress-bar {
-  background: #AECFD1;
+  background: #eeeeee;
   border-radius: 3px;
   margin: 5px 0; }
   .progress-bar .bar {
-    height: 15px;
-    background-color: #2B8475;
+    height: 10px;
+    background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
+    background-image: -o-linear-gradient(top, #bad304 0%, #a8bf04 100%);
+    background-image: linear-gradient(to bottom, #bad304 0%, #a8bf04 100%);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
     border-radius: 3px;
     max-width: 100%; }
 
