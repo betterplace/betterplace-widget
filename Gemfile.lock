@@ -13,8 +13,8 @@ GEM
       tty-spinner
     letsencrypt_rack (0.1.2)
     multipart-post (2.3.0)
-    nio4r (2.5.9)
-    puma (6.2.1)
+    nio4r (2.7.3)
+    puma (6.4.3)
       nio4r (~> 2.0)
     rack (3.0.7)
     rainbow (3.1.1)
