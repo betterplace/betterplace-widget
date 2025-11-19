@@ -22,6 +22,10 @@
   .button.button-block {
     display: block; }
 
+.wirwunder .button {
+  background-image: -webkit-linear-gradient(top, red 0%, red 100%);
+}
+
 .progress-bar {
   background: #ACE7D1;
   border-radius: 8px;

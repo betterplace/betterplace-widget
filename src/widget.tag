@@ -71,7 +71,7 @@ var TranslationMixin = {
 }
 
 <widget class={ widgetClass }>
-  <project if={ !oldIE } record_url={ record_url } client_url={ client_url }></project>
+  <project if={ !oldIE } record_url={ record_url } client_url={ client_url } widget_class={ widgetClass }></project>
   <iefallback if={ oldIE }></iefallback>
 
   <script>
@@ -90,6 +90,9 @@ var TranslationMixin = {
 
     if(params.legacy)
       this.widgetClass = 'legacy-size'
+
+    if(params.wirwunder)
+      this.widgetClass = ((this.widgetClass || '') + ' wirwunder').trim()
 
     if(params.client) {
       this.client_url = api_base_url + '/clients/' + params.client + '/widget_config'

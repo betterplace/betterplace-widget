@@ -36,7 +36,11 @@
         <span>{ client.widget_subline }</span>
       </div>
 
-      <div class="logo" if={ !client || !client.widget_logo }>
+      <div class="logo" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+        <img src='https://storage.googleapis.com/betterplace-assets/static-images/logos/wirwunder_logo_rgb.svg'/>
+      </div>
+
+      <div class="logo" if={ opts.widget_class && !opts.widget_class.includes('wirwunder') }>
         <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
       </div>
       <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
