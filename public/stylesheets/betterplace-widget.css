@@ -23,17 +23,23 @@
     display: block; }
 
 .progress-bar {
-  background: #eeeeee;
+  background: #ACE7D1;
   border-radius: 8px;
-  margin: 5px 0; }
+  margin: 5px 0;
+  margin-left: -40px;
+  margin-right: -40px;
+  width: calc(100% + 80px);}
   .progress-bar .bar {
-    height: 10px;
-    background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
-    background-image: -o-linear-gradient(top, #bad304 0%, #a8bf04 100%);
-    background-image: linear-gradient(to bottom, #bad304 0%, #a8bf04 100%);
+    height: 11px;
+    background-image: -webkit-linear-gradient(top, #358475 0%, #358475 100%);
+    background-image: -o-linear-gradient(top, #358475 0%, #358475 100%);
+    background-image: linear-gradient(to bottom, #358475 0%, #358475 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     max-width: 100%; }
 
 html,
