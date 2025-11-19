@@ -5,7 +5,7 @@
   background-image: linear-gradient(to bottom, #bad304 0%, #99ad03 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FF99AD03', GradientType=0);
-  border-radius: 6px;
+  border-radius: 4px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -24,7 +24,7 @@
 
 .progress-bar {
   background: #eeeeee;
-  border-radius: 3px;
+  border-radius: 8px;
   margin: 5px 0; }
   .progress-bar .bar {
     height: 10px;
@@ -33,7 +33,7 @@
     background-image: linear-gradient(to bottom, #bad304 0%, #a8bf04 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
-    border-radius: 3px;
+    border-radius: 8px;
     max-width: 100%; }
 
 html,
@@ -63,7 +63,9 @@ iefallback {
 widget {
   min-width: 160px;
   max-width: 320px;
-  background-color: white; }
+  background-color: white; 
+  border-radius: 8px;
+  overflow: hidden; }
 
 widget.legacy-size .image,
 iefallback.legacy-size .image {
@@ -109,7 +111,7 @@ section {
 
 project,
 iefallback {
-  border: 1px solid #cccccc; }
+  border: none; }
   project .image,
   iefallback .image {
     height: 52vw;

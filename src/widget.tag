@@ -44,7 +44,7 @@ var TranslationMixin = {
     en: {
       donations_count:      "Donations",
       financed:             "financed",
-      donate:               "View & donate",
+      donate:               "Donate now",
       visit:                "Visit page",
       donations_prohibited: "At the moment you can't donate online.",
       iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
@@ -54,7 +54,7 @@ var TranslationMixin = {
     de: {
       donations_count:      "Spenden",
       financed:             "finanziert",
-      donate:               "Informieren & spenden",
+      donate:               "Jetzt spenden",
       visit:                "Seite besuchen",
       donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
       iefallback_text:      "In Ihrer Version des Internet Explorers können die Informationen leider nicht geladen werden. Bitte besuchen Sie uns direkt auf betterplace.org",
