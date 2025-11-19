@@ -10,7 +10,7 @@
     </div>
 
     <div class="logo">
-      <img src="/images/bp-logo.png"/>
+      <img src="/images/bp-org-logo.png"/>
     </div>
   </section>
 

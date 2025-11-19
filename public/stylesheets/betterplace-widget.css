@@ -1,8 +1,8 @@
 @import url("https://betterplace-assets.betterplace.org/packs/media/fira-sans-v10-latin/fira-sans-v11-latin-ext_latin-600-0bc8595c.woff2");
 .button {
-  background-image: -webkit-linear-gradient(top, #bad304 0%, #99ad03 100%);
-  background-image: -o-linear-gradient(top, #bad304 0%, #99ad03 100%);
-  background-image: linear-gradient(to bottom, #bad304 0%, #99ad03 100%);
+  background-image: -webkit-linear-gradient(top, #9ECB0A 0%, #85AC1C 100%);
+  background-image: -o-linear-gradient(top, #9ECB0A 0%, #85AC1C 100%);
+  background-image: linear-gradient(to bottom, #9ECB0A 0%, #85AC1C 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FF99AD03', GradientType=0);
   border-radius: 4px;
@@ -68,7 +68,8 @@ widget {
   max-width: 320px;
   background-color: white; 
   border-radius: 8px;
-  overflow: hidden; }
+  overflow: hidden;
+  box-shadow: 0 4.5px 9px -2.25px rgba(0, 0, 0, 0.20); }
 
 widget.legacy-size .image,
 iefallback.legacy-size .image {
@@ -161,7 +162,7 @@ iefallback {
     font-size: 0; }
     project .project-values .value,
     iefallback .project-values .value {
-      font-weight: 550;
+      font-weight: 700;
       font-size: 15px;
       color: #3f3f3f; 
     }
@@ -177,7 +178,7 @@ iefallback {
     display: inline-block;
     vertical-align: top;
     font-size: 11px;
-    color: #949494;}
+    color: #636363;}
   project .donations-count:last-child,
   iefallback .donations-count:last-child {
     width: 100%;
@@ -195,9 +196,10 @@ iefallback {
     width: 15px;
     height: 15px;
     text-align: center;
-    background: #888;
-    color: white;
-    font: italic bold 10px/1.5 serif;
+    color: #888;
+    background: white;
+    border: 1px solid #888;
+    font: bold 10px/1.5 sans-serif;
     text-decoration: none; }
     project .privacy-policy-link:hover,
     iefallback .privacy-policy-link:hover {
