@@ -31,11 +31,6 @@
         <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
       </div>
 
-      <div class="logo" if={ client.widget_logo }>
-        <img src={ client.widget_logo }/>
-        <span>{ client.widget_subline }</span>
-      </div>
-
       <div class="wirwunder-logos" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
         <div class="logo" >
           <img src='/images/wirwunder_logo_red.svg'/>
@@ -46,7 +41,7 @@
         </div>
       </div>
 
-      <div class="logo" if={ opts.widget_class && !opts.widget_class.includes('wirwunder') }>
+      <div class="logo" if={ !client }>
         <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
       </div>
       <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>

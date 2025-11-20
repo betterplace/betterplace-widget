@@ -272,7 +272,7 @@ iefallback .logo {
 }
 project .logo img,
 iefallback .logo img {
-  min-height: 30px;
+  min-height: 10px;
   max-width: 140px;
   max-height: 25px;
   display: block;
