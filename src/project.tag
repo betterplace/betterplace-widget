@@ -42,7 +42,7 @@
         </div>
 
         <div class="logo" if={ client.wirwunder_logo }>
-          <img src='/images/wirwunder_logo_red.svg'/>
+          <img src={ client.wirwunder_logo }/>
         </div>
       </div>
 
