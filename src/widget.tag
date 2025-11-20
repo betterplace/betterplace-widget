@@ -80,7 +80,7 @@ var TranslationMixin = {
     this.api_hosts = {
       production:  'https://api.betterplace.org',
       staging:     'https://api.bp42.com',
-      development: 'https://api.betterplace.org',
+      development: 'https://api.betterplace.dev',
     }
     this.mixin(TranslationMixin)
     var params       = riot.route.query()

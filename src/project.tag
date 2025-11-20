@@ -36,8 +36,14 @@
         <span>{ client.widget_subline }</span>
       </div>
 
-      <div class="logo" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
-        <img src='https://storage.googleapis.com/betterplace-assets/static-images/logos/wirwunder_logo_rgb.svg'/>
+      <div class="wirwunder-logos" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+        <div class="logo" >
+          <img src='/images/wirwunder_logo_red.svg'/>
+        </div>
+
+        <div class="logo" if={ client.wirwunder_logo }>
+          <img src='/images/wirwunder_logo_red.svg'/>
+        </div>
       </div>
 
       <div class="logo" if={ opts.widget_class && !opts.widget_class.includes('wirwunder') }>
