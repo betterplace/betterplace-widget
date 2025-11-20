@@ -41,7 +41,7 @@
         </div>
       </div>
 
-      <div class="logo" if={ !client }>
+      <div class="logo" if={ !client && !(opts.widget_class == 'wirwunder') }>
         <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
       </div>
       <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
