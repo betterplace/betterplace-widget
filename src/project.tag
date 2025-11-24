@@ -1,19 +1,20 @@
-<project>
+<project class={ opts.donate_button ? 'mini' : '' }>
   <div class="image" style="background-image: url('{ profile_picture }');">
   </div>
 
-  <section class="content">
+  <section class="content show-on-mini">
     <div>
-      <h1><unsafe-html html={ record.title } /></h1>
+      <h1 if={ !opts.donate_button }><unsafe-html html={ record.title } /></h1>
 
       <div class="limited-width">
-        <div if={ !record.donations_prohibited } class="project-values">
-          <div class="progress-bar" if={ record.progress_percentage }>
+        <div if={ !record.donations_prohibited && !opts.donate_button} class="project-values">
+          <div class="progress-bar" if={ record.progress_percentage && !opts.donate_button }>
             <div class="bar" style="width: { record.progress_percentage }%">
+              <div class={ opts.donate_button }></div>
             </div>
           </div>
 
-          <div class="donations-count">
+          <div class="donations-count" if={ !opts.donate_button }>
             <div class="value">{ record.donations_count }</div>
             { t.donations_count }
           </div>
@@ -27,11 +28,11 @@
           { t.donations_prohibited }
         </div>
 
-        <a target="_blank" class="button button-block" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
+        <a target="_blank" class="button button-block show-on-mini" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
         <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
       </div>
 
-      <div class="wirwunder-logos" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+      <div class="wirwunder-logos show-on-mini" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
         <div class="logo" >
           <img src='/images/wirwunder_logo_red.svg'/>
         </div>
@@ -41,10 +42,10 @@
         </div>
       </div>
 
-      <div class="logo" if={ !client && !(opts.widget_class == 'wirwunder') }>
+      <div class="logo show-on-mini" if={ !client && !(opts.widget_class == 'wirwunder') }>
         <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
       </div>
-      <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
+      <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }" if={ !opts.donate_button }>i</a>
     <div>
   </section>
 
@@ -54,6 +55,8 @@
     this.mixin(TranslationMixin)
 
     this.on('mount', function(){
+      console.log(opts.donate_button);
+      
       this.load(this.opts.record_url, 'record')
 
       if(this.opts.client_url) {

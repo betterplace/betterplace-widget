@@ -71,7 +71,7 @@ var TranslationMixin = {
 }
 
 <widget class={ widgetClass }>
-  <project if={ !oldIE } record_url={ record_url } client_url={ client_url } widget_class={ widgetClass }></project>
+  <project if={ !oldIE } record_url={ record_url } client_url={ client_url } widget_class={ widgetClass } donate_button={ donateButton }></project>
   <iefallback if={ oldIE }></iefallback>
 
   <script>
@@ -87,6 +87,9 @@ var TranslationMixin = {
     var api_host     = this.api_hosts[(params.env || 'production')]
     var api_base_url = api_host + '/' + this.lang + '/api_v4'
     this.record_url  = api_base_url + document.location.pathname
+
+    if(params.donate_button)
+      this.donateButton = 'true'
 
     if(params.legacy)
       this.widgetClass = 'legacy-size'

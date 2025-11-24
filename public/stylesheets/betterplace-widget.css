@@ -297,4 +297,8 @@ iefallback .image + section {
   height: 200px;
 }
 
+.mini > *:not(.show-on-mini) {
+  display: none;
+}
+
 /*# sourceMappingURL=betterplace-widget.css.map */
