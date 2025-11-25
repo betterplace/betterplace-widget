@@ -42,7 +42,7 @@
         </div>
       </div>
 
-      <div class="logo show-on-mini" if={ !client && !(opts.widget_class == 'wirwunder') }>
+      <div class="logo show-on-mini" if={ !(opts.widget_class.includes('wirwunder')) }>
         <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
       </div>
       <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }" if={ !opts.donate_button }>i</a>
