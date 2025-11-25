@@ -49,14 +49,6 @@
   max-width: 100%;
 }
 
-html,
-body,
-widget,
-project,
-iefallback {
-  height: 100%;
-}
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -302,9 +294,17 @@ iefallback .image + section {
 }
 
 .mini > .content.show-on-mini {
-    height: auto !important;
-    min-height: 0 !important;
-    max-height: none !important;
-  }
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+}
+
+/* widget:not(.straight) {
+  border-radius: 8px;
+} */
+
+widget.straight {
+  border-radius: 0% !important;
+}
 
 /*# sourceMappingURL=betterplace-widget.css.map */

@@ -94,6 +94,11 @@ var TranslationMixin = {
     if(params.legacy)
       this.widgetClass = 'legacy-size'
 
+    if(params.donate_button) {
+      this.donateButton = 'true'
+      this.widgetClass = ((this.widgetClass || '') + ' straight').trim()
+    }  
+
     if(params.wirwunder)
       this.widgetClass = ((this.widgetClass || '') + ' wirwunder').trim()
 
