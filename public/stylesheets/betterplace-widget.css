@@ -301,4 +301,10 @@ iefallback .image + section {
   display: none;
 }
 
+.mini > .content.show-on-mini {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
 /*# sourceMappingURL=betterplace-widget.css.map */
