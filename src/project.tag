@@ -66,11 +66,19 @@
 
     this.on('update', function() {
       if(this.record) {
+        var utm_medium = opts.donate_button ? 'external_banner' : document.location.pathname.substring(1).replace(/s?\//, '_')
+        var utm_source = opts.donate_button ? 'projects' : (document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget')
+        var utm_content = `project#${this.record.id}`
         var utm = {
-          utm_source: document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget',
-          utm_medium: document.location.pathname.substring(1).replace(/s?\//, '_'),
-          utm_campaign: 'widget',
+          utm_source: utm_source,
+          utm_medium: utm_medium,
+          utm_campaign: opts.donate_button ? 'donate_btn' : 'widget',
         };
+
+        if(opts.donate_button) {
+          utm.utm_content = utm_content
+        }
+
         var utm_query = '?' + Object.keys(utm).map(function(k, _) { return k + '=' + utm[k] }).join('&');
 
         this.profile_picture = this.find_link(this.record.profile_picture.links, 'fill_410x214')
