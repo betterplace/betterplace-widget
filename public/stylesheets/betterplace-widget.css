@@ -71,7 +71,7 @@ iefallback {
 
 widget {
   min-width: 160px;
-  max-width: 320px;
+  max-width: 98%;
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
@@ -128,7 +128,7 @@ iefallback.legacy-size .logo img {
 }
 
 section {
-  padding: 15px;
+  padding: 10px;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -140,7 +140,7 @@ iefallback {
 project .image,
 iefallback .image {
   height: 52vw;
-  max-height: 40vh;
+  max-height: 35vh;
   background-size: cover;
   background-position: 50% 25%;
   background-repeat: no-repeat;
@@ -258,7 +258,7 @@ project .wirwunder-logos {
   align-items: center;
 }
 project .wirwunder-logos img {
-  min-height: 30px;
+  min-height: 25px;
 }
 project .logo,
 iefallback .logo {
