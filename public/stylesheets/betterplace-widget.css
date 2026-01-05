@@ -50,7 +50,7 @@
 }
 
 body {
-  margin: 0px;
+  margin: 2.5px;
   font-family: Arial, sans-serif;
   color: #3f3f3f;
   -webkit-font-smoothing: antialiased;
@@ -301,12 +301,9 @@ iefallback .image + section {
   max-height: none !important;
 }
 
-/* widget:not(.straight) {
-  border-radius: 8px;
-} */
-
 widget.straight {
   border-radius: 0% !important;
+  box-shadow: none;
 }
 
 /*# sourceMappingURL=betterplace-widget.css.map */
