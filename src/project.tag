@@ -58,9 +58,11 @@
     this.mixin(FindLinkMixin)
     this.mixin(TranslationMixin)
 
+    this.generateUtmQuery = function(utm) {
+      return '?' + Object.keys(utm).map(function(k) { return k + '=' + utm[k] }).join('&');
+    }
+
     this.on('mount', function(){
-      console.log(opts.donate_button);
-      
       this.load(this.opts.record_url, 'record')
 
       if(this.opts.client_url) {
@@ -72,24 +74,27 @@
       if(this.record) {
         var utm_medium = opts.donate_button ? 'external_banner' : document.location.pathname.substring(1).replace(/s?\//, '_')
         var utm_source = opts.donate_button ? 'projects' : (document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget')
-        var utm_content = `project#${this.record.id}`
+        var utm_content = 'bp'
         var utm = {
           utm_source: utm_source,
           utm_medium: utm_medium,
           utm_campaign: opts.donate_button ? 'donate_btn' : 'widget',
+          utm_content: utm_content,
         };
 
-        if(opts.donate_button) {
-          utm.utm_content = utm_content
-        }
-
-        var utm_query = '?' + Object.keys(utm).map(function(k, _) { return k + '=' + utm[k] }).join('&');
+        var utm_query = this.generateUtmQuery(utm);
 
         this.profile_picture = this.find_link(this.record.profile_picture.links, 'fill_410x214')
         this.visit_url       = this.find_link(this.record.links, 'platform') + utm_query
 
         if(this.client && this.client.project_url_template) {
           this.visit_url = this.client.project_url_template.replace('{project_id}', this.record.id)
+          
+          if(opts.widget_class.includes('wirwunder')) {
+            utm.utm_content = 'ww'
+            var utm_query = this.generateUtmQuery(utm);
+            this.visit_url = this.visit_url.replace('/projects/', '/project/') + utm_query
+          }
         }
       }
     })
