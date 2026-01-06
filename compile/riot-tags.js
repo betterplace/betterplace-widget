@@ -27,8 +27,8 @@ riot.tag2('project', '<div class="image" riot-style="background-image: url(\'{pr
 
     this.on('update', function() {
       if(this.record) {
-        var utm_medium = opts.donate_button ? 'external_banner' : document.location.pathname.substring(1).replace(/s?\//, '_')
-        var utm_source = opts.donate_button ? 'projects' : (document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget')
+        var utm_medium = document.location.pathname.substring(1).replace(/s?\//, '_')
+        var utm_source = document.location.pathname.substring(1).replace(/s?\/.*/, '')
         var utm_content = 'bp'
         var utm = {
           utm_source: utm_source,
