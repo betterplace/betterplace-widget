@@ -4,7 +4,7 @@
   background-image: -o-linear-gradient(top, #9ecb0a 0%, #85ac1c 100%);
   background-image: linear-gradient(to bottom, #9ecb0a 0%, #85ac1c 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FF99AD03', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9ECB0A', endColorstr='#FF85AC1C', GradientType=0);
   border-radius: 4px;
   text-align: center;
   color: white;
@@ -15,59 +15,52 @@
   border-color: transparent;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   padding: 7px 2px;
-  font-family: "Fira Sans", sans-serif;
-}
-@media (min-width: 220px) {
-  .button {
-    font-size: 14px;
-  }
-}
-.button.button-block {
-  display: block;
-}
+  font-family: "Fira Sans", sans-serif; }
+  @media (min-width: 220px) {
+    .button {
+      font-size: 14px; } }
+  .button.button-block {
+    display: block; }
 
 .wirwunder .button {
-  background-image: -webkit-linear-gradient(top, red 0%, red 100%);
-}
+  background: #FF0000; }
 
 .progress-bar {
   background: #ace7d1;
   border-radius: 8px;
-  margin: 5px 0;
-}
-.progress-bar .bar {
-  height: 11px;
-  background-image: -webkit-linear-gradient(top, #358475 0%, #358475 100%);
-  background-image: -o-linear-gradient(top, #358475 0%, #358475 100%);
-  background-image: linear-gradient(to bottom, #358475 0%, #358475 100%);
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  max-width: 100%;
-}
+  margin: 5px 0; }
+  .progress-bar .bar {
+    height: 11px;
+    background: #358475;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    max-width: 100%; }
+
+html,
+body,
+widget,
+project,
+iefallback {
+  height: 100%; }
 
 body {
   margin: 2.5px;
   font-family: Arial, sans-serif;
   color: #3f3f3f;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  -moz-osx-font-smoothing: grayscale; }
 
 * {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 widget,
 project,
 iefallback {
   display: block;
   max-height: 320px;
-  position: relative;
-}
+  position: relative; }
 
 widget {
   min-width: 160px;
@@ -75,235 +68,190 @@ widget {
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4.5px 9px -2.25px rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 4.5px 9px -2.25px rgba(0, 0, 0, 0.2); }
 
 widget.legacy-size .image,
 iefallback.legacy-size .image {
   background-size: 200px;
   background-repeat: no-repeat;
-  background-position: 50% 0;
-}
+  background-position: 50% 0; }
 widget.legacy-size .content,
 iefallback.legacy-size .content {
-  padding: 5px 10px 5px 10px;
-}
+  padding: 5px 10px 5px 10px; }
 widget.legacy-size .progress-percentage,
 iefallback.legacy-size .progress-percentage {
-  display: none;
-}
+  display: none; }
 widget.legacy-size .progress-bar,
 iefallback.legacy-size .progress-bar {
-  margin: 10px 0 5px 0;
-}
+  margin: 10px 0 5px 0; }
 widget.legacy-size .project-values,
 iefallback.legacy-size .project-values {
-  margin: 5px 0;
-}
+  margin: 5px 0; }
 widget.legacy-size .donations-count,
 iefallback.legacy-size .donations-count {
   width: 100%;
-  text-align: center;
-}
-widget.legacy-size .donations-count .value,
-iefallback.legacy-size .donations-count .value {
-  display: inline;
-  font-size: inherit;
-}
+  text-align: center; }
+  widget.legacy-size .donations-count .value,
+  iefallback.legacy-size .donations-count .value {
+    display: inline;
+    font-size: inherit; }
 widget.legacy-size .project-status-message,
 iefallback.legacy-size .project-status-message {
   font-size: 11px;
-  margin: 5px 0;
-}
+  margin: 5px 0; }
 widget.legacy-size .logo,
 iefallback.legacy-size .logo {
   border-top: 0;
   margin-top: 0;
-  padding-top: 5px;
-}
-widget.legacy-size .logo img,
-iefallback.legacy-size .logo img {
-  margin-bottom: 0;
-  max-height: 25px;
-}
+  padding-top: 5px; }
+  widget.legacy-size .logo img,
+  iefallback.legacy-size .logo img {
+    margin-bottom: 0;
+    max-height: 25px; }
+widget.straight,
+iefallback.straight {
+  border-radius: 0% !important;
+  box-shadow: none; }
 
 section {
   padding: 10px;
   flex-direction: column;
-  justify-content: space-between;
-}
-
-project,
-iefallback {
-  border: none;
-}
-project .image,
-iefallback .image {
-  height: 52vw;
-  max-height: 35vh;
-  background-size: cover;
-  background-position: 50% 25%;
-  background-repeat: no-repeat;
-}
-project .image + section,
-iefallback .image + section {
-  display: flex;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  height: 67vh;
-}
-@media (min-width: 220px) {
-  project .image + section,
-  iefallback .image + section {
-    height: 59.3vh;
-  }
-}
-project .image + section > div,
-iefallback .image + section > div {
-  align-self: center;
-  width: 100%;
-}
-project h1,
-iefallback h1 {
-  margin: 0 0 5px 0;
-  font-family: "Fira Sans", sans-serif;
-  font-weight: 600;
-  text-align: center;
-  word-break: break-word;
-  font-size: 14px;
-  line-height: 16px;
-}
-@media (min-width: 220px) {
-  project h1,
-  iefallback h1 {
-    font-size: 15.5px;
-    line-height: 17px;
-  }
-}
-project .limited-width,
-iefallback .limited-width {
-  min-width: 140px;
-  max-width: 90%;
-  margin: 0 auto;
-}
-project .project-values,
-iefallback .project-values {
-  margin: 5px 0;
-  font-size: 0;
-}
-project .project-values .value,
-iefallback .project-values .value {
-  font-weight: 700;
-  font-size: 15px;
-  color: #3f3f3f;
-}
-@media (min-width: 220px) {
-  project .project-values .value,
-  iefallback .project-values .value {
-    display: inline-block;
-  }
-}
-project .donations-count,
-project .progress-percentage,
-iefallback .donations-count,
-iefallback .progress-percentage {
-  width: 50%;
-  display: inline-block;
-  vertical-align: top;
-  font-size: 11px;
-  color: #636363;
-}
-project .donations-count:last-child,
-iefallback .donations-count:last-child {
-  width: 100%;
-  text-align: center;
-}
-project .progress-percentage,
-iefallback .progress-percentage {
-  text-align: right;
-}
-project .privacy-policy-link,
-iefallback .privacy-policy-link {
-  position: absolute;
-  bottom: 3px;
-  right: 3px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  text-align: center;
-  color: #888;
-  background: white;
-  border: 1px solid #888;
-  font: bold 10px/1.5 sans-serif;
-  text-decoration: none;
-}
-project .privacy-policy-link:hover,
-iefallback .privacy-policy-link:hover {
-  background: #aaa;
-}
-project .project-status-message,
-iefallback .project-status-message {
-  font-size: 12px;
-  line-height: 12px;
-  color: #636b70;
-  text-align: center;
-  margin: 5px 0 10px 0;
-}
-project .wirwunder-logos {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-project .wirwunder-logos img {
-  min-height: 25px;
-}
-project .logo,
-iefallback .logo {
-  margin-top: 10px;
-  text-align: center;
-  color: #636b70;
-  font-size: 10px;
-}
-project .logo img,
-iefallback .logo img {
-  max-width: 140px;
-  max-height: 25px;
-  display: block;
-  margin: 0 auto;
-}
-project .logo img.betterplace-logo,
-iefallback .logo img.betterplace-logo {
-  margin-top: -2px;
-}
-project .logo span,
-iefallback .logo span {
-  display: inline-block;
-  margin-top: 5px;
-}
-
-iefallback .image {
-  height: 120px;
-}
-iefallback .image + section {
-  height: 200px;
-}
+  justify-content: space-between; }
 
 .mini > *:not(.show-on-mini) {
-  display: none;
-}
+  display: none; }
 
 .mini > .content.show-on-mini {
   height: auto !important;
   min-height: 0 !important;
-  max-height: none !important;
-}
+  max-height: none !important; }
 
-widget.straight {
-  border-radius: 0% !important;
-  box-shadow: none;
-}
+project,
+iefallback {
+  border: none; }
+  project .image,
+  iefallback .image {
+    height: 52vw;
+    max-height: 35vh;
+    background-size: cover;
+    background-position: 50% 25%;
+    background-repeat: no-repeat; }
+    project .image + section,
+    iefallback .image + section {
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-box-align: center;
+      height: 67vh; }
+      @media (min-width: 220px) {
+        project .image + section,
+        iefallback .image + section {
+          height: 59.3vh; } }
+      project .image + section > div,
+      iefallback .image + section > div {
+        align-self: center;
+        width: 100%; }
+  project h1,
+  iefallback h1 {
+    margin: 0 0 5px 0;
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 600;
+    text-align: center;
+    word-break: break-word;
+    font-size: 14px;
+    line-height: 16px; }
+    @media (min-width: 220px) {
+      project h1,
+      iefallback h1 {
+        font-size: 15.5px;
+        line-height: 17px; } }
+  project .limited-width,
+  iefallback .limited-width {
+    min-width: 140px;
+    max-width: 90%;
+    margin: 0 auto; }
+  project .project-values,
+  iefallback .project-values {
+    margin: 5px 0;
+    font-size: 0; }
+    project .project-values .value,
+    iefallback .project-values .value {
+      font-weight: 700;
+      font-size: 15px;
+      color: #3f3f3f; }
+      @media (min-width: 220px) {
+        project .project-values .value,
+        iefallback .project-values .value {
+          display: inline-block; } }
+  project .donations-count,
+  project .progress-percentage,
+  iefallback .donations-count,
+  iefallback .progress-percentage {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 11px;
+    color: #636363; }
+  project .donations-count:last-child,
+  iefallback .donations-count:last-child {
+    width: 100%;
+    text-align: center; }
+  project .progress-percentage,
+  iefallback .progress-percentage {
+    text-align: right; }
+  project .privacy-policy-link,
+  iefallback .privacy-policy-link {
+    position: absolute;
+    bottom: 3px;
+    right: 3px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    background: white;
+    color: #888;
+    border: 1px solid #888;
+    font: bold 13px/1.5 serif;
+    text-decoration: none; }
+    project .privacy-policy-link:hover,
+    iefallback .privacy-policy-link:hover {
+      background: #aaa; }
+  project .project-status-message,
+  iefallback .project-status-message {
+    font-size: 12px;
+    line-height: 12px;
+    color: #636b70;
+    text-align: center;
+    margin: 5px 0 10px 0; }
+  project .logo,
+  iefallback .logo {
+    margin-top: 0px;
+    text-align: center;
+    color: #636b70;
+    font-size: 10px; }
+    project .logo img,
+    iefallback .logo img {
+      max-width: 140px;
+      max-height: 25px;
+      display: block;
+      margin: 0 auto; }
+    project .logo span,
+    iefallback .logo span {
+      display: inline-block;
+      margin-top: 5px; }
+  project .wirwunder-logos,
+  iefallback .wirwunder-logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    project .wirwunder-logos img,
+    iefallback .wirwunder-logos img {
+      min-height: 50px; }
+
+iefallback .image {
+  height: 120px;
+  height: 200px; }
 
 /*# sourceMappingURL=betterplace-widget.css.map */
