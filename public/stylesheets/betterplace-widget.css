@@ -43,10 +43,13 @@ body,
 widget,
 project,
 iefallback {
-  height: 100%; }
+  height: 99%; }
 
 body {
-  margin: 2.5px;
+  margin-top: 0px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  margin-bottom: 2.5px;
   font-family: Arial, sans-serif;
   color: #3f3f3f;
   -webkit-font-smoothing: antialiased;
