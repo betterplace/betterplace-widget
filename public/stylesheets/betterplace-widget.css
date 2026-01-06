@@ -240,6 +240,9 @@ iefallback {
       max-height: 25px;
       display: block;
       margin: 0 auto; }
+      project .logo img.betterplace-logo,
+      iefallback .logo img.betterplace-logo {
+        margin-top: 5px; }
     project .logo span,
     iefallback .logo span {
       display: inline-block;
