@@ -3,10 +3,13 @@ body,
 widget,
 project,
 iefallback
-  height: 100%
+  height: 99%
 
 body
-  margin: 0
+  margin-top: 0px
+  margin-left: 2.5px
+  margin-right: 2.5px
+  margin-bottom: 2.5px
   font-family: Arial, sans-serif
   color: $very-dark-grey
   -webkit-font-smoothing: antialiased
@@ -24,8 +27,11 @@ iefallback
 
 widget
   min-width: 160px
-  max-width: 320px
+  max-width: 98%
   background-color: white
+  border-radius: 8px
+  overflow: hidden
+  box-shadow: 0 4.5px 9px -2.25px rgba(0, 0, 0, 0.2)
 
 // Special styling for migration phase. Review 2017
 widget,
@@ -60,5 +66,19 @@ iefallback
         margin-bottom: 0
         max-height: 25px
 
+  &.straight
+    border-radius: 0% !important
+    box-shadow: none
+
 section
   padding: 10px
+  flex-direction: column
+  justify-content: space-between
+
+.mini > *:not(.show-on-mini)
+  display: none
+
+.mini > .content.show-on-mini
+  height: auto !important
+  min-height: 0 !important
+  max-height: none !important  

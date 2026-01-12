@@ -44,7 +44,7 @@ var TranslationMixin = {
     en: {
       donations_count:      "Donations",
       financed:             "financed",
-      donate:               "View & donate",
+      donate:               "Donate now",
       visit:                "Visit page",
       donations_prohibited: "At the moment you can't donate online.",
       iefallback_text:      "Your version of Internet Explorer is not supported, please visit us on betterplace.org",
@@ -54,7 +54,7 @@ var TranslationMixin = {
     de: {
       donations_count:      "Spenden",
       financed:             "finanziert",
-      donate:               "Informieren & spenden",
+      donate:               "Jetzt spenden",
       visit:                "Seite besuchen",
       donations_prohibited: "Leider kann zurzeit nicht online gespendet werden.",
       iefallback_text:      "In Ihrer Version des Internet Explorers können die Informationen leider nicht geladen werden. Bitte besuchen Sie uns direkt auf betterplace.org",
@@ -71,7 +71,7 @@ var TranslationMixin = {
 }
 
 <widget class={ widgetClass }>
-  <project if={ !oldIE } record_url={ record_url } client_url={ client_url }></project>
+  <project if={ !oldIE } record_url={ record_url } client_url={ client_url } widget_class={ widgetClass } donate_button={ donateButton }></project>
   <iefallback if={ oldIE }></iefallback>
 
   <script>
@@ -80,7 +80,7 @@ var TranslationMixin = {
     this.api_hosts = {
       production:  'https://api.betterplace.org',
       staging:     'https://api.bp42.com',
-      development: 'https://api.betterplace.org',
+      development: 'https://api.betterplace.dev',
     }
     this.mixin(TranslationMixin)
     var params       = riot.route.query()
@@ -88,8 +88,19 @@ var TranslationMixin = {
     var api_base_url = api_host + '/' + this.lang + '/api_v4'
     this.record_url  = api_base_url + document.location.pathname
 
+    if(params.donate_button)
+      this.donateButton = 'true'
+
     if(params.legacy)
       this.widgetClass = 'legacy-size'
+
+    if(params.donate_button) {
+      this.donateButton = 'true'
+      this.widgetClass = ((this.widgetClass || '') + ' straight').trim()
+    }  
+
+    if(params.wirwunder)
+      this.widgetClass = ((this.widgetClass || '') + ' wirwunder').trim()
 
     if(params.client) {
       this.client_url = api_base_url + '/clients/' + params.client + '/widget_config'

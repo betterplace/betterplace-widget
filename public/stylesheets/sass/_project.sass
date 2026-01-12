@@ -1,10 +1,9 @@
 project,
 iefallback
-  $border-width: 1px
-  border: $border-width solid $light-grey
+  border: none
 
   .image
-    $image-height: 40vh
+    $image-height: 35vh
     height: 52vw
     max-height: $image-height
     background-size: cover
@@ -38,7 +37,7 @@ iefallback
 
   .limited-width
     min-width: 140px
-    max-width: 180px
+    max-width: 90%
     margin: 0 auto
 
   .project-values
@@ -46,8 +45,9 @@ iefallback
     font-size: 0
 
     .value
-      font-size: 16px
-      color: $dark-grey
+      font-weight: 700
+      font-size: 15px
+      color: $very-dark-grey
 
       +wide
         display: inline-block
@@ -58,7 +58,7 @@ iefallback
     display: inline-block
     vertical-align: top
     font-size: 11px
-    color: $medium-grey
+    color: $bp-medium-grey
 
   .donations-count:last-child
     width: 100%
@@ -71,28 +71,31 @@ iefallback
     position: absolute
     bottom: 3px
     right: 3px
-    display: block
+    display: inline-flex
+    align-items: center
+    justify-content: center
     border-radius: 50%
     width: 15px
     height: 15px
     text-align: center
-    background: #888
-    color: white
-    font: italic bold 10px/1.5 serif
+    background: white
+    color: #888
+    border: 1px solid #888
+    font: bold 13px/1.5 serif
     text-decoration: none
 
     &:hover
       background: #aaa
 
   .project-status-message
-    font-size: 12px
-    line-height: 12px
+    font-size: 11px
+    line-height: 11px
     color: $dark-grey
     text-align: center
-    margin: 5px 0 10px 0
+    margin: 3px 0 3px 0
 
   .logo
-    margin-top: 10px
+    margin-top: 0px
     text-align: center
     color: $dark-grey
     font-size: 10px
@@ -104,15 +107,23 @@ iefallback
       margin: 0 auto
 
       &.betterplace-logo
-        margin-top: -2px
+        margin-top: 5px  
 
     span
       display: inline-block
       margin-top: 5px
+
+  .wirwunder-logos
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+
+    img
+      min-height: 50px
 
 iefallback
   .image
     height: 120px
 
     \+section
-      height: 200px
+    height: 200px

@@ -1,52 +1,66 @@
-<project>
+<project class={ opts.donate_button ? 'mini' : '' }>
   <div class="image" style="background-image: url('{ profile_picture }');">
   </div>
 
-  <section class="content">
-    <div>
-      <h1><unsafe-html html={ record.title } /></h1>
+  <section class="content show-on-mini">
+    <h1 if={ !opts.donate_button }><unsafe-html html={ record.title } /></h1>
 
-      <div class="limited-width">
-        <div if={ !record.donations_prohibited } class="project-values">
-          <div class="progress-bar" if={ record.progress_percentage }>
-            <div class="bar" style="width: { record.progress_percentage }%">
-            </div>
-          </div>
-
-          <div class="donations-count">
-            <div class="value">{ record.donations_count }</div>
-            { t.donations_count }
-          </div>
-          <div if={ record.progress_percentage} class="progress-percentage">
-            <div class="value">{ record.progress_percentage } %</div>
-            { t.financed }
+    <div class="limited-width">
+      <div if={ !record.donations_prohibited && !opts.donate_button} class="project-values">
+        <div class="progress-bar" if={ record.progress_percentage && !opts.donate_button }>
+          <div class="bar" style="width: { record.progress_percentage }%">
+            <div class={ opts.donate_button }></div>
           </div>
         </div>
+      </div>
+    </div>
 
-        <div class="project-status-message" if={ record.donations_prohibited }>
-          { t.donations_prohibited }
+    <div class="limited-width">
+      <div if={ !record.donations_prohibited && !opts.donate_button} class="project-values">
+        <div class="donations-count" if={ !opts.donate_button }>
+          <div class="value">{ record.donations_count }</div>
+          { t.donations_count }
         </div>
+        <div if={ record.progress_percentage} class="progress-percentage">
+          <div class="value">{ record.progress_percentage } %</div>
+          { t.financed }
+        </div>
+      </div>
+    </div>
 
-        <a target="_blank" class="button button-block" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
-        <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
+    <div class="limited-width">
+      <div class="project-status-message" if={ record.donations_prohibited }>
+        { t.donations_prohibited }
       </div>
 
-      <div class="logo" if={ client.widget_logo }>
-        <img src={ client.widget_logo }/>
-        <span>{ client.widget_subline }</span>
+      <a target="_blank" class="button button-block show-on-mini" if={ !record.donations_prohibited } href="{ visit_url }">{ t.donate }</a>
+      <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
+    </div>
+
+    <div class="wirwunder-logos show-on-mini" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+      <div class="logo" >
+        <img src='/images/wirwunder_logo_red.svg'/>
       </div>
 
-      <div class="logo" if={ !client || !client.widget_logo }>
-        <img class="betterplace-logo" src="/images/bp-logo.png"/>
+      <div class="logo" if={ client.wirwunder_logo }>
+        <img src={ client.wirwunder_logo }/>
       </div>
-      <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
-    <div>
+    </div>
+
+    <div class="logo show-on-mini" if={ !opts.widget_class || !(opts.widget_class.includes('wirwunder')) }>
+      <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
+    </div>
+    <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
   </section>
 
   <script>
     this.mixin(AjaxMixin)
     this.mixin(FindLinkMixin)
     this.mixin(TranslationMixin)
+
+    this.generateUtmQuery = function(utm) {
+      return '?' + Object.keys(utm).map(function(k) { return k + '=' + utm[k] }).join('&');
+    }
 
     this.on('mount', function(){
       this.load(this.opts.record_url, 'record')
@@ -58,18 +72,29 @@
 
     this.on('update', function() {
       if(this.record) {
+        var utm_medium = document.location.pathname.substring(1).replace(/s?\//, '_')
+        var utm_source = document.location.pathname.substring(1).replace(/s?\/.*/, '')
+        var utm_content = 'bp'
         var utm = {
-          utm_source: document.location.pathname.substring(1).replace(/s?\/.*/, '') + '_widget',
-          utm_medium: document.location.pathname.substring(1).replace(/s?\//, '_'),
-          utm_campaign: 'widget',
+          utm_source: utm_source,
+          utm_medium: utm_medium,
+          utm_campaign: opts.donate_button ? 'donate_btn' : 'widget',
+          utm_content: utm_content,
         };
-        var utm_query = '?' + Object.keys(utm).map(function(k, _) { return k + '=' + utm[k] }).join('&');
+
+        var utm_query = this.generateUtmQuery(utm);
 
         this.profile_picture = this.find_link(this.record.profile_picture.links, 'fill_410x214')
         this.visit_url       = this.find_link(this.record.links, 'platform') + utm_query
 
         if(this.client && this.client.project_url_template) {
           this.visit_url = this.client.project_url_template.replace('{project_id}', this.record.id)
+          
+          if(opts.widget_class.includes('wirwunder')) {
+            utm.utm_content = 'ww'
+            var utm_query = this.generateUtmQuery(utm);
+            this.visit_url = this.visit_url.replace('/projects/', '/project/') + utm_query
+          }
         }
       }
     })

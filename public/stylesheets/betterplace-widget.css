@@ -1,11 +1,11 @@
 @import url("https://betterplace-assets.betterplace.org/packs/media/fira-sans-v10-latin/fira-sans-v11-latin-ext_latin-600-0bc8595c.woff2");
 .button {
-  background-image: -webkit-linear-gradient(top, #bad304 0%, #99ad03 100%);
-  background-image: -o-linear-gradient(top, #bad304 0%, #99ad03 100%);
-  background-image: linear-gradient(to bottom, #bad304 0%, #99ad03 100%);
+  background-image: -webkit-linear-gradient(top, #9ecb0a 0%, #85ac1c 100%);
+  background-image: -o-linear-gradient(top, #9ecb0a 0%, #85ac1c 100%);
+  background-image: linear-gradient(to bottom, #9ecb0a 0%, #85ac1c 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FF99AD03', GradientType=0);
-  border-radius: 6px;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FF9ECB0A', endColorstr='#FF85AC1C', GradientType=0);
+  border-radius: 4px;
   text-align: center;
   color: white;
   text-decoration: none;
@@ -22,18 +22,20 @@
   .button.button-block {
     display: block; }
 
+.wirwunder .button {
+  background: #FF0000; }
+
 .progress-bar {
-  background: #eeeeee;
-  border-radius: 3px;
+  background: #ace7d1;
+  border-radius: 8px;
   margin: 5px 0; }
   .progress-bar .bar {
-    height: 10px;
-    background-image: -webkit-linear-gradient(top, #bad304 0%, #a8bf04 100%);
-    background-image: -o-linear-gradient(top, #bad304 0%, #a8bf04 100%);
-    background-image: linear-gradient(to bottom, #bad304 0%, #a8bf04 100%);
-    background-repeat: repeat-x;
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FFBAD304', endColorstr='#FFA8BF04', GradientType=0);
-    border-radius: 3px;
+    height: 11px;
+    background: #358475;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
     max-width: 100%; }
 
 html,
@@ -41,10 +43,13 @@ body,
 widget,
 project,
 iefallback {
-  height: 100%; }
+  height: 99%; }
 
 body {
-  margin: 0;
+  margin-top: 0px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+  margin-bottom: 2.5px;
   font-family: Arial, sans-serif;
   color: #3f3f3f;
   -webkit-font-smoothing: antialiased;
@@ -62,8 +67,11 @@ iefallback {
 
 widget {
   min-width: 160px;
-  max-width: 320px;
-  background-color: white; }
+  max-width: 98%;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4.5px 9px -2.25px rgba(0, 0, 0, 0.2); }
 
 widget.legacy-size .image,
 iefallback.legacy-size .image {
@@ -103,17 +111,31 @@ iefallback.legacy-size .logo {
   iefallback.legacy-size .logo img {
     margin-bottom: 0;
     max-height: 25px; }
+widget.straight,
+iefallback.straight {
+  border-radius: 0% !important;
+  box-shadow: none; }
 
 section {
-  padding: 10px; }
+  padding: 10px;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.mini > *:not(.show-on-mini) {
+  display: none; }
+
+.mini > .content.show-on-mini {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important; }
 
 project,
 iefallback {
-  border: 1px solid #cccccc; }
+  border: none; }
   project .image,
   iefallback .image {
     height: 52vw;
-    max-height: 40vh;
+    max-height: 35vh;
     background-size: cover;
     background-position: 50% 25%;
     background-repeat: no-repeat; }
@@ -148,7 +170,7 @@ iefallback {
   project .limited-width,
   iefallback .limited-width {
     min-width: 140px;
-    max-width: 180px;
+    max-width: 90%;
     margin: 0 auto; }
   project .project-values,
   iefallback .project-values {
@@ -156,8 +178,9 @@ iefallback {
     font-size: 0; }
     project .project-values .value,
     iefallback .project-values .value {
-      font-size: 16px;
-      color: #636b70; }
+      font-weight: 700;
+      font-size: 15px;
+      color: #3f3f3f; }
       @media (min-width: 220px) {
         project .project-values .value,
         iefallback .project-values .value {
@@ -170,7 +193,7 @@ iefallback {
     display: inline-block;
     vertical-align: top;
     font-size: 11px;
-    color: #949494; }
+    color: #636363; }
   project .donations-count:last-child,
   iefallback .donations-count:last-child {
     width: 100%;
@@ -183,28 +206,31 @@ iefallback {
     position: absolute;
     bottom: 3px;
     right: 3px;
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
     width: 15px;
     height: 15px;
     text-align: center;
-    background: #888;
-    color: white;
-    font: italic bold 10px/1.5 serif;
+    background: white;
+    color: #888;
+    border: 1px solid #888;
+    font: bold 13px/1.5 serif;
     text-decoration: none; }
     project .privacy-policy-link:hover,
     iefallback .privacy-policy-link:hover {
       background: #aaa; }
   project .project-status-message,
   iefallback .project-status-message {
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 11px;
+    line-height: 11px;
     color: #636b70;
     text-align: center;
-    margin: 5px 0 10px 0; }
+    margin: 3px 0 3px 0; }
   project .logo,
   iefallback .logo {
-    margin-top: 10px;
+    margin-top: 0px;
     text-align: center;
     color: #636b70;
     font-size: 10px; }
@@ -216,15 +242,22 @@ iefallback {
       margin: 0 auto; }
       project .logo img.betterplace-logo,
       iefallback .logo img.betterplace-logo {
-        margin-top: -2px; }
+        margin-top: 5px; }
     project .logo span,
     iefallback .logo span {
       display: inline-block;
       margin-top: 5px; }
+  project .wirwunder-logos,
+  iefallback .wirwunder-logos {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+    project .wirwunder-logos img,
+    iefallback .wirwunder-logos img {
+      min-height: 50px; }
 
 iefallback .image {
-  height: 120px; }
-  iefallback .image + section {
-    height: 200px; }
+  height: 120px;
+  height: 200px; }
 
 /*# sourceMappingURL=betterplace-widget.css.map */

@@ -1,11 +1,14 @@
 .progress-bar
-  background: $very-light-grey
-  border-radius: 3px
+  background: $bp-light-teal
+  border-radius: 8px
   margin: 5px 0
 
   .bar
-    height: 10px
-    +gradient-vertical($medium-green, darken($medium-green, 4%))
-    border-radius: 3px
+    height: 11px
+    background: $bp-medium-teal
+    border-top-left-radius: 8px
+    border-bottom-left-radius: 8px
+    border-top-right-radius: 0
+    border-bottom-right-radius: 0
     max-width: 100%
 

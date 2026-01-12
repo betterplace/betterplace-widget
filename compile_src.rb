@@ -16,7 +16,7 @@ class CompileSrc
     production? and return
 
     # Compile riot
-    `riot --compact src/ compile/riot-tags.js`
+    `npx -p riot@3 riot src/ compile/riot-tags.js`
 
     # Merge js files
     js_files = %w[

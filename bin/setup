@@ -2,4 +2,5 @@
 
 asdf install
 bundle install
+npm install -g riot@3
 npm install riot @riotjs/cli -g
