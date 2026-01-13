@@ -8,7 +8,7 @@
     <div class="limited-width">
       <div if={ !record.donations_prohibited && !opts.donate_button} class="project-values">
         <div class="progress-bar" if={ record.progress_percentage && !opts.donate_button }>
-          <div class="bar" style="width: { record.progress_percentage }%">
+          <div class={ "bar" + (record.progress_percentage >= 100 ? " full" : "") } style="width: { record.progress_percentage }%">
             <div class={ opts.donate_button }></div>
           </div>
         </div>
@@ -89,7 +89,7 @@
 
         if(this.client && this.client.project_url_template) {
           this.visit_url = this.client.project_url_template.replace('{project_id}', this.record.id)
-          
+
           if(opts.widget_class.includes('wirwunder')) {
             utm.utm_content = 'ww'
             var utm_query = this.generateUtmQuery(utm);

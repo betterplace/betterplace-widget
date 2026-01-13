@@ -37,6 +37,9 @@
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     max-width: 100%; }
+    .progress-bar .bar.full {
+      border-top-right-radius: 8px;
+      border-bottom-right-radius: 8px; }
 
 html,
 body,
