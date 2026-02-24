@@ -67,7 +67,7 @@ iefallback {
   position: relative; }
 
 widget {
-  min-width: 160px;
+  min-width: 154px;
   max-width: 98%;
   background-color: white;
   border-radius: 8px;
@@ -272,6 +272,12 @@ iefallback {
 @media (max-height: 103px) {
   .wirwunder-logos.donations-prohibited img, .wirwunder-logos.donations-prohibited > img, .wirwunder-logos.donations-prohibited img:not(:root) {
     min-height: 40px !important; } }
+@media (max-width: 160px) {
+  .logo img {
+    max-width: 110px !important; }
+
+  .limited-width {
+    min-width: 0 !important; } }
 iefallback .image {
   height: 120px;
   height: 200px; }
