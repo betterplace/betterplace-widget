@@ -122,6 +122,9 @@ section {
   flex-direction: column;
   justify-content: space-between; }
 
+@media (max-height: 103px) {
+  section.donations-prohibited {
+    padding: 0px !important; } }
 .mini > *:not(.show-on-mini) {
   display: none; }
 
@@ -266,6 +269,9 @@ iefallback {
 @media (max-width: 225px) {
   .wirwunder-logos img, .wirwunder-logos > img, .wirwunder-logos img:not(:root) {
     min-height: 35px !important; } }
+@media (max-height: 103px) {
+  .wirwunder-logos.donations-prohibited img, .wirwunder-logos.donations-prohibited > img, .wirwunder-logos.donations-prohibited img:not(:root) {
+    min-height: 40px !important; } }
 iefallback .image {
   height: 120px;
   height: 200px; }

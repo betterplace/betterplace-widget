@@ -2,7 +2,7 @@
   <div class="image" style="background-image: url('{ profile_picture }');">
   </div>
 
-  <section class="content show-on-mini">
+  <section class={ 'content show-on-mini' + (record.donations_prohibited ? ' donations-prohibited' : '') }>
     <h1 if={ !opts.donate_button }><unsafe-html html={ record.title } /></h1>
 
     <div class="limited-width">
@@ -46,7 +46,7 @@
     </div>  
     
 
-    <div class="wirwunder-logos show-on-mini" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+    <div class={ 'wirwunder-logos show-on-mini' + (record.donations_prohibited ? ' donations-prohibited' : '') } if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
       <div class="logo" >
         <img src='/images/wirwunder_logo_red.svg'/>
       </div>
