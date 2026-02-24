@@ -58,13 +58,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-* {
-  box-sizing: border-box; }
-
 widget,
 project,
 iefallback {
-  display: block;
+  display: flex;
+  flex-direction: column;
   max-height: 320px;
   position: relative; }
 
@@ -197,6 +195,12 @@ iefallback {
     vertical-align: top;
     font-size: 11px;
     color: #636363; }
+  project .supported-by,
+  iefallback .supported-by {
+    font-size: 11px;
+    color: #636363;
+    text-align: center;
+    margin-top: 5px; }
   project .donations-count:last-child,
   iefallback .donations-count:last-child {
     width: 100%;
@@ -259,6 +263,9 @@ iefallback {
     iefallback .wirwunder-logos img {
       min-height: 50px; }
 
+@media (max-width: 225px) {
+  .wirwunder-logos img, .wirwunder-logos > img, .wirwunder-logos img:not(:root) {
+    min-height: 35px !important; } }
 iefallback .image {
   height: 120px;
   height: 200px; }

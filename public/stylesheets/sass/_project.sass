@@ -60,6 +60,12 @@ iefallback
     font-size: 11px
     color: $bp-medium-grey
 
+  .supported-by
+    font-size: 11px
+    color: $bp-medium-grey
+    text-align: center
+    margin-top: 5px  
+
   .donations-count:last-child
     width: 100%
     text-align: center
@@ -120,6 +126,10 @@ iefallback
 
     img
       min-height: 50px
+
+@media (max-width: 225px)
+  .wirwunder-logos img, .wirwunder-logos > img, .wirwunder-logos img:not(:root)
+    min-height: 35px !important
 
 iefallback
   .image

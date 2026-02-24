@@ -37,6 +37,15 @@
       <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
     </div>
 
+    
+    <div class="supported-by" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+      { t.supported_by_wirwuder }
+    </div>
+    <div class="supported-by" if={ !opts.widget_class || !(opts.widget_class.includes('wirwunder')) }>
+      { t.provided_by_betterplace }
+    </div>  
+    
+
     <div class="wirwunder-logos show-on-mini" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
       <div class="logo" >
         <img src='/images/wirwunder_logo_red.svg'/>
