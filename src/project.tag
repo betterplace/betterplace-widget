@@ -2,13 +2,15 @@
   <div class="image" style="background-image: url('{ profile_picture }');">
   </div>
 
-  <section class={ 'content show-on-mini' + (record.donations_prohibited ? ' donations-prohibited' : '') }>
+  <!-- Main Content Section -->
+  <section class={ this.contentClass() }>
     <h1 if={ !opts.donate_button }><unsafe-html html={ record.title } /></h1>
 
+    <!-- Progress Bar -->
     <div class="limited-width">
       <div if={ !record.donations_prohibited && !opts.donate_button} class="project-values">
         <div class="progress-bar" if={ record.progress_percentage && !opts.donate_button }>
-          <div class={ "bar" + (record.progress_percentage >= 100 ? " full" : "") } style="width: { record.progress_percentage }%">
+          <div class={ this.barClass() } style="width: { record.progress_percentage }%">
             <div class={ opts.donate_button }></div>
           </div>
         </div>
@@ -28,6 +30,7 @@
       </div>
     </div>
 
+    <!-- Status message when donation prohibited -->
     <div class="limited-width">
       <div class="project-status-message" if={ record.donations_prohibited }>
         { t.donations_prohibited }
@@ -37,16 +40,17 @@
       <a target="_blank" class="button button-block" if={ record.donations_prohibited } href="{ visit_url }">{ t.visit }</a>
     </div>
 
-    
-    <div class="supported-by" if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+    <!-- Logo explanation -->
+    <div class="supported-by" if={ this.isWirwunder() }>
       { t.supported_by_wirwuder }
     </div>
-    <div class="supported-by" if={ !opts.widget_class || !(opts.widget_class.includes('wirwunder')) }>
+    <div class="supported-by" if={ this.isBetterplace() }>
       { t.provided_by_betterplace }
     </div>  
     
 
-    <div class={ 'wirwunder-logos show-on-mini' + (record.donations_prohibited ? ' donations-prohibited' : '') } if={ opts.widget_class && opts.widget_class.includes('wirwunder') }>
+    <!-- WirWunder Logos -->
+    <div class={ this.wirwunderLogosClass() } if={ this.isWirwunder() }>
       <div class="logo" >
         <img src='/images/wirwunder_logo_red.svg'/>
       </div>
@@ -56,7 +60,8 @@
       </div>
     </div>
 
-    <div class="logo show-on-mini" if={ !opts.widget_class || !(opts.widget_class.includes('wirwunder')) }>
+    <!-- Betterplace Logo -->
+    <div class="logo show-on-mini" if={ this.isBetterplace() }>
       <img class="betterplace-logo" src="/images/bp-org-logo.png"/>
     </div>
     <a href="{ t.privacy_policy_url }" target="_blank" class="privacy-policy-link" title="{ t.privacy_policy_text }">i</a>
@@ -67,13 +72,33 @@
     this.mixin(FindLinkMixin)
     this.mixin(TranslationMixin)
 
+    // Helper for main content section class
+    this.contentClass = function() {
+      return 'content show-on-mini' + (this.record && this.record.donations_prohibited ? ' donations-prohibited' : '');
+    }
+    // Helper for progress bar class
+    this.barClass = function() {
+      return 'bar' + (this.record && this.record.progress_percentage >= 100 ? ' full' : '');
+    }
+    // Helper for wirwunder logos class
+    this.wirwunderLogosClass = function() {
+      return 'wirwunder-logos show-on-mini' + (this.record && this.record.donations_prohibited ? ' donations-prohibited' : '');
+    }
+    // Helper for Wirwunder check
+    this.isWirwunder = function() {
+      return this.opts.widget_class && this.opts.widget_class.includes('wirwunder');
+    }
+    // Helper for Betterplace check
+    this.isBetterplace = function() {
+      return !this.opts.widget_class || !this.opts.widget_class.includes('wirwunder');
+    }
+
     this.generateUtmQuery = function(utm) {
       return '?' + Object.keys(utm).map(function(k) { return k + '=' + utm[k] }).join('&');
     }
 
     this.on('mount', function(){
       this.load(this.opts.record_url, 'record')
-
       if(this.opts.client_url) {
         this.load(this.opts.client_url, 'client')
       }
@@ -108,5 +133,4 @@
       }
     })
   </script>
-
 </project>
