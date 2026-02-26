@@ -51,7 +51,7 @@ var TranslationMixin = {
       privacy_policy_url:      "https://www.betterplace.org/c/rules/privacy-policy",
       privacy_policy_text:     "View privacy policy",
       provided_by_betterplace: "Provided by",
-      supported_by_wirwuder:   "Supported by",
+      supported_by_wirwunder:   "Supported by",
     },
     de: {
       donations_count:         "Spenden",
@@ -63,7 +63,7 @@ var TranslationMixin = {
       privacy_policy_url:      "https://www.betterplace.org/c/regeln/datenschutz",
       privacy_policy_text:     "Datenschutzerklärung anzeigen",
       provided_by_betterplace: "Bereitgestellt von",
-      supported_by_wirwuder:   "Unterstützt von",
+      supported_by_wirwunder:   "Unterstützt von",
     }
   },
 

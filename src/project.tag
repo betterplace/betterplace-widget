@@ -42,7 +42,7 @@
 
     <!-- Logo explanation -->
     <div class="supported-by" if={ this.isWirwunder() }>
-      { t.supported_by_wirwuder }
+      { t.supported_by_wirwunder }
     </div>
     <div class="supported-by" if={ this.isBetterplace() }>
       { t.provided_by_betterplace }
@@ -124,7 +124,7 @@
         if(this.client && this.client.project_url_template) {
           this.visit_url = this.client.project_url_template.replace('{project_id}', this.record.id)
 
-          if(opts.widget_class.includes('wirwunder')) {
+          if(opts.widget_class && opts.widget_class.includes('wirwunder')) {
             utm.utm_content = 'ww'
             var utm_query = this.generateUtmQuery(utm);
             this.visit_url = this.visit_url.replace('/projects/', '/project/') + utm_query
