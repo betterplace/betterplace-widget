@@ -16,17 +16,18 @@ body
   -moz-osx-font-smoothing: grayscale
 
 *
-  box-sizing: border-box
+  box-sizing: content-box
 
 widget,
 project,
 iefallback
-  display: block
+  display: flex
+  flex-direction: column
   max-height: 320px
   position: relative
 
 widget
-  min-width: 160px
+  min-width: 154px
   max-width: 98%
   background-color: white
   border-radius: 8px
@@ -74,6 +75,10 @@ section
   padding: 10px
   flex-direction: column
   justify-content: space-between
+
+@media (max-height: 120px)
+  section.donations-prohibited
+    padding: 0px !important
 
 .mini > *:not(.show-on-mini)
   display: none

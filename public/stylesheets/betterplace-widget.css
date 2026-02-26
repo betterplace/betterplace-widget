@@ -59,17 +59,18 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: content-box; }
 
 widget,
 project,
 iefallback {
-  display: block;
+  display: flex;
+  flex-direction: column;
   max-height: 320px;
   position: relative; }
 
 widget {
-  min-width: 160px;
+  min-width: 154px;
   max-width: 98%;
   background-color: white;
   border-radius: 8px;
@@ -124,6 +125,9 @@ section {
   flex-direction: column;
   justify-content: space-between; }
 
+@media (max-height: 120px) {
+  section.donations-prohibited {
+    padding: 0px !important; } }
 .mini > *:not(.show-on-mini) {
   display: none; }
 
@@ -197,6 +201,12 @@ iefallback {
     vertical-align: top;
     font-size: 11px;
     color: #636363; }
+  project .supported-by,
+  iefallback .supported-by {
+    font-size: 11px;
+    color: #636363;
+    text-align: center;
+    margin-top: 5px; }
   project .donations-count:last-child,
   iefallback .donations-count:last-child {
     width: 100%;
@@ -259,6 +269,18 @@ iefallback {
     iefallback .wirwunder-logos img {
       min-height: 50px; }
 
+@media (max-width: 225px) {
+  .wirwunder-logos img, .wirwunder-logos > img, .wirwunder-logos img:not(:root) {
+    min-height: 35px !important; } }
+@media (max-height: 120px) {
+  .wirwunder-logos.donations-prohibited img, .wirwunder-logos.donations-prohibited > img, .wirwunder-logos.donations-prohibited img:not(:root) {
+    min-height: 40px !important; } }
+@media (max-width: 160px) {
+  .logo img {
+    max-width: 110px !important; }
+
+  .limited-width {
+    min-width: 0 !important; } }
 iefallback .image {
   height: 120px;
   height: 200px; }
