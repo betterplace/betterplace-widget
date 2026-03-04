@@ -59,17 +59,18 @@ body {
   -moz-osx-font-smoothing: grayscale; }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: content-box; }
 
 widget,
 project,
 iefallback {
-  display: block;
+  display: flex;
+  flex-direction: column;
   max-height: 320px;
   position: relative; }
 
 widget {
-  min-width: 160px;
+  min-width: 154px;
   max-width: 98%;
   background-color: white;
   border-radius: 8px;
@@ -120,10 +121,13 @@ iefallback.straight {
   box-shadow: none; }
 
 section {
-  padding: 10px;
+  padding: 5px;
   flex-direction: column;
   justify-content: space-between; }
 
+@media (max-height: 120px) {
+  section.donations-prohibited {
+    padding: 0px !important; } }
 .mini > *:not(.show-on-mini) {
   display: none; }
 
@@ -163,12 +167,12 @@ iefallback {
     font-weight: 600;
     text-align: center;
     word-break: break-word;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 16px; }
     @media (min-width: 220px) {
       project h1,
       iefallback h1 {
-        font-size: 15.5px;
+        font-size: 16px;
         line-height: 17px; } }
   project .limited-width,
   iefallback .limited-width {
@@ -182,7 +186,7 @@ iefallback {
     project .project-values .value,
     iefallback .project-values .value {
       font-weight: 700;
-      font-size: 15px;
+      font-size: 16px;
       color: #3f3f3f; }
       @media (min-width: 220px) {
         project .project-values .value,
@@ -195,8 +199,14 @@ iefallback {
     width: 50%;
     display: inline-block;
     vertical-align: top;
-    font-size: 11px;
+    font-size: 14px;
     color: #636363; }
+  project .supported-by,
+  iefallback .supported-by {
+    font-size: 14px;
+    color: #636363;
+    text-align: center;
+    margin-top: 5px; }
   project .donations-count:last-child,
   iefallback .donations-count:last-child {
     width: 100%;
@@ -219,14 +229,14 @@ iefallback {
     background: white;
     color: #888;
     border: 1px solid #888;
-    font: bold 13px/1.5 serif;
+    font: bold 14px/1.5 serif;
     text-decoration: none; }
     project .privacy-policy-link:hover,
     iefallback .privacy-policy-link:hover {
       background: #aaa; }
   project .project-status-message,
   iefallback .project-status-message {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 11px;
     color: #636b70;
     text-align: center;
@@ -236,7 +246,7 @@ iefallback {
     margin-top: 0px;
     text-align: center;
     color: #636b70;
-    font-size: 10px; }
+    font-size: 14px; }
     project .logo img,
     iefallback .logo img {
       max-width: 140px;
@@ -259,6 +269,18 @@ iefallback {
     iefallback .wirwunder-logos img {
       min-height: 50px; }
 
+@media (max-width: 225px) {
+  .wirwunder-logos img, .wirwunder-logos > img, .wirwunder-logos img:not(:root) {
+    min-height: 35px !important; } }
+@media (max-height: 120px) {
+  .wirwunder-logos.donations-prohibited img, .wirwunder-logos.donations-prohibited > img, .wirwunder-logos.donations-prohibited img:not(:root) {
+    min-height: 35px !important; } }
+@media (max-width: 160px) {
+  .logo img {
+    max-width: 110px !important; }
+
+  .limited-width {
+    min-width: 0 !important; } }
 iefallback .image {
   height: 120px;
   height: 200px; }

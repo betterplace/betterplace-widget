@@ -29,10 +29,10 @@ iefallback
     font-weight: 600
     text-align: center
     word-break: break-word
-    font-size: 14px
+    font-size: 16px
     line-height: 16px
     +wide
-      font-size: 15.5px
+      font-size: 16px
       line-height: 17px
 
   .limited-width
@@ -46,7 +46,7 @@ iefallback
 
     .value
       font-weight: 700
-      font-size: 15px
+      font-size: 16px
       color: $very-dark-grey
 
       +wide
@@ -57,8 +57,14 @@ iefallback
     width: 50%
     display: inline-block
     vertical-align: top
-    font-size: 11px
+    font-size: 14px
     color: $bp-medium-grey
+
+  .supported-by
+    font-size: 14px
+    color: $bp-medium-grey
+    text-align: center
+    margin-top: 5px  
 
   .donations-count:last-child
     width: 100%
@@ -81,14 +87,14 @@ iefallback
     background: white
     color: #888
     border: 1px solid #888
-    font: bold 13px/1.5 serif
+    font: bold 14px/1.5 serif
     text-decoration: none
 
     &:hover
       background: #aaa
 
   .project-status-message
-    font-size: 11px
+    font-size: 12px
     line-height: 11px
     color: $dark-grey
     text-align: center
@@ -98,7 +104,7 @@ iefallback
     margin-top: 0px
     text-align: center
     color: $dark-grey
-    font-size: 10px
+    font-size: 14px
 
     img
       max-width: 140px
@@ -120,6 +126,21 @@ iefallback
 
     img
       min-height: 50px
+
+@media (max-width: 225px)
+  .wirwunder-logos img, .wirwunder-logos > img, .wirwunder-logos img:not(:root)
+    min-height: 35px !important
+
+@media (max-height: 120px)
+  .wirwunder-logos.donations-prohibited img, .wirwunder-logos.donations-prohibited > img, .wirwunder-logos.donations-prohibited img:not(:root)
+    min-height: 35px !important
+
+@media (max-width: 160px)
+  .logo img
+    max-width: 110px !important
+
+  .limited-width
+    min-width: 0 !important  
 
 iefallback
   .image
